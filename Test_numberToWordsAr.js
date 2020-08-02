@@ -7,12 +7,14 @@ testCases4();
 testCases5();
 testCases6();
 testCases7();
+testCases8();
+testCases9();
 
 //=========================================
 //             Test Code
 //=========================================
 function testCases1() {
-    var r=0; // test tracker
+let r=0; // test tracker
     r |= test("",0,"صفر");
     r |= test(0,0,"صفر");
     r |= test(1,0,"واحد");
@@ -26,7 +28,7 @@ function testCases1() {
     r |= test(9,0,"تسعة");
     r |= test(10,0,"عشرة");
     r |= test(11,0,"أحد عشر");
-    r |= test(12,0,"إثنا عشر");
+    r |= test(12,0,"اثنا عشر");
     r |= test(13,0,"ثلاثة عشر");
     r |= test(14,0,"أربعة عشر");
     r |= test(15,0,"خمسة عشر");
@@ -59,7 +61,7 @@ function testCases1() {
     r |= test(109,0,"مائة وتسعة");
     r |= test(110,0,"مائة وعشرة");
     r |= test(111,0,"مائة وأحد عشر");
-    r |= test(112,0,"مائة وإثنا عشر");
+    r |= test(112,0,"مائة واثنا عشر");
     r |= test(113,0,"مائة وثلاثة عشر");
     r |= test(120,0,"مائة وعشرون");
     r |= test(121,0,"مائة وواحد وعشرون");
@@ -84,7 +86,7 @@ function testCases1() {
     r |= test(209,0,"مائتان وتسعة");
     r |= test(210,0,"مائتان وعشرة");
     r |= test(211,0,"مائتان وأحد عشر");
-    r |= test(212,0,"مائتان وإثنا عشر");
+    r |= test(212,0,"مائتان واثنا عشر");
     r |= test(213,0,"مائتان وثلاثة عشر");
     r |= test(220,0,"مائتان وعشرون");
     r |= test(221,0,"مائتان وواحد وعشرون");
@@ -101,7 +103,7 @@ function testCases1() {
     r |= test(303,0,"ثلاثمائة وثلاثة");
     r |= test(310,0,"ثلاثمائة وعشرة");
     r |= test(311,0,"ثلاثمائة وأحد عشر");
-    r |= test(312,0,"ثلاثمائة وإثنا عشر");
+    r |= test(312,0,"ثلاثمائة واثنا عشر");
     r |= test(313,0,"ثلاثمائة وثلاثة عشر");
     r |= test(320,0,"ثلاثمائة وعشرون");
     r |= test(321,0,"ثلاثمائة وواحد وعشرون");
@@ -153,14 +155,14 @@ function testCases1() {
     r |= test(11100,0,"أحد عشر ألفًا ومائة");
     r |= test(11200,0,"أحد عشر ألفًا ومائتان");
     r |= test(11300,0,"أحد عشر ألفًا وثلاثمائة");
-    r |= test(12001,0,"إثنا عشر ألفًا وواحد");
-    r |= test(12002,0,"إثنا عشر ألفًا واثنان");
-    r |= test(12003,0,"إثنا عشر ألفًا وثلاثة");
-    r |= test(12011,0,"إثنا عشر ألفًا وأحد عشر");
-    r |= test(12022,0,"إثنا عشر ألفًا واثنان وعشرون");
-    r |= test(12100,0,"إثنا عشر ألفًا ومائة");
-    r |= test(12200,0,"إثنا عشر ألفًا ومائتان");
-    r |= test(12300,0,"إثنا عشر ألفًا وثلاثمائة");
+    r |= test(12001,0,"اثنا عشر ألفًا وواحد");
+    r |= test(12002,0,"اثنا عشر ألفًا واثنان");
+    r |= test(12003,0,"اثنا عشر ألفًا وثلاثة");
+    r |= test(12011,0,"اثنا عشر ألفًا وأحد عشر");
+    r |= test(12022,0,"اثنا عشر ألفًا واثنان وعشرون");
+    r |= test(12100,0,"اثنا عشر ألفًا ومائة");
+    r |= test(12200,0,"اثنا عشر ألفًا ومائتان");
+    r |= test(12300,0,"اثنا عشر ألفًا وثلاثمائة");
     r |= test(13001,0,"ثلاثة عشر ألفًا وواحد");
     r |= test(13002,0,"ثلاثة عشر ألفًا واثنان");
     r |= test(13003,0,"ثلاثة عشر ألفًا وثلاثة");
@@ -194,27 +196,28 @@ function testCases1() {
     r |= test(2002001,0,"مليونان وألفان وواحد");
     r |= test(2002003,0,"مليونان وألفان وثلاثة");
     r |= test(2002000,0,"مليونان وألفان");
-    r |= test(2002002000,0,"بليونان ومليونان وألفان");
-    r |= test(2452452000,0,"بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا");
-    r |= test(2452002000,0,"بليونان وأربعمائة واثنان وخمسون مليونًا وألفان");
+    r |= test(2002002000,0,"ملياران ومليونان وألفان");
+    r |= test(2452452000,0,"ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا");
+    r |= test(2452002000,0,"ملياران وأربعمائة واثنان وخمسون مليونًا وألفان");
+    r |= test(255000000000,0,"مائتان وخمسة وخمسون مليارًا");
 
-    if (r==0) console.log("Test Case 1 ....Passed.");
+    if (r==0) console.log("Test Case 1  ....Passed.");
 }
 
 function testCases2() {
-    var r=0; // test tracker
-    r |= test(16588464060,0,"ستة عشر بليونًا وخمسمائة وثمانية وثمانون مليونًا وأربعمائة وأربعة وستون ألفًا وستون");
-    r |= test(25933508149,0,"خمسة وعشرون بليونًا وتسعمائة وثلاثة وثلاثون مليونًا وخمسمائة وثمانية آلاف ومائة وتسعة وأربعون");
+let r=0; // test tracker
+    r |= test(16588464060,0,"ستة عشر مليارًا وخمسمائة وثمانية وثمانون مليونًا وأربعمائة وأربعة وستون ألفًا وستون");
+    r |= test(25933508149,0,"خمسة وعشرون مليارًا وتسعمائة وثلاثة وثلاثون مليونًا وخمسمائة وثمانية آلاف ومائة وتسعة وأربعون");
     r |= test(200_000_000,0,"مائتا مليون");
     r |= test(2_000_000,0,"مليونان");
     r |= test(200_222_200,0,"مائتا مليون ومائتان واثنان وعشرون ألفًا ومائتان");
 
-    if (r==0) console.log("Test Case 2 ....Passed.");
+if (r==0) console.log("Test Case 2  ....Passed.");
 }
 
 function testCases3() {
   // ---- Test for Feminine Numbers
-  var r=0; // test tracker
+  let r=0; // test tracker
   r |= test(""    ,{Feminine:"on"},"صفر");
   r |= test(1     ,{Feminine:"on"},"واحدة");
   r |= test(2     ,{Feminine:"on"},"اثنتان");
@@ -227,7 +230,7 @@ function testCases3() {
   r |= test(9     ,{Feminine:"on"},"تسع");
   r |= test(10    ,{Feminine:"on"},"عشر");
   r |= test(11    ,{Feminine:"on"},"إحدى عشرة");
-  r |= test(12    ,{Feminine:"on"},"إثنتا عشرة");
+  r |= test(12    ,{Feminine:"on"},"اثنتا عشرة");
   r |= test(13    ,{Feminine:"on"},"ثلاث عشرة");
   r |= test(14    ,{Feminine:"on"},"أربع عشرة");
   r |= test(15    ,{Feminine:"on"},"خمس عشرة");
@@ -244,55 +247,115 @@ function testCases3() {
   r |= test(213013,{Feminine:"on"},"مائتان وثلاثة عشر ألفًا وثلاث عشرة");
   r |= test(13013 ,{Feminine:"on"},"ثلاثة عشر ألفًا وثلاث عشرة");
   r |= test(200002,{Feminine:"on"},"مائتا ألف واثنتان");
+  r |= test(200010,{Feminine:"on"},"مائتا ألف وعشر");
+  r |= test(200011,{Feminine:"on"},"مائتا ألف وإحدى عشرة");
+  r |= test(200012,{Feminine:"on"},"مائتا ألف واثنتا عشرة");
+  r |= test(200013,{Feminine:"on"},"مائتا ألف وثلاث عشرة");
   r |= test(1     ,{Feminine:"on"},"واحدة");
   r |= test(2     ,{Feminine:"on"},"اثنتان");
-  if (r==0) console.log("Test Case 3 - Option {Feminine}  ....Passed.");
+  if (r==0) console.log("Test Case 3 - Option {Feminine}   ....Passed.");
   }
 
 
 function testCases4() {
 // ---- Test for using Miah مئة بدل مائة
-var r=0; // test tracker
+let r=0; // test tracker
 r |= test(100  ,{Miah:"on"},"مئة");
 r |= test(200  ,{Miah:"on"},"مئتان");
 r |= test(300  ,{Miah:"on"},"ثلاثمئة");
 r |= test(2700 ,{Miah:"on"},"ألفان وسبعمئة");
-if (r==0) console.log("Test Case 4 - Option {Miah}      ....Passed.");
+r |= test(200  ,{Miah:"on",Accusative:"on"},"مئتين");
+r |= test(2700 ,{Miah:"on",Accusative:"on"},"ألفين وسبعمئة");
+if (r==0) console.log("Test Case 4 - Option {Miah}       ....Passed.");
 }
 
 function testCases5() {
 // ---- Test for Inserting Comma between triplets
-var r=0; // test tracker
+let r=0; // test tracker
 r |= test(1200      ,{Comma:"on"},"ألف، ومائتان");
 r |= test(122500    ,{Comma:"on"},"مائة واثنان وعشرون ألفًا، وخمسمائة");
 r |= test(100100100 ,{Comma:"on"},"مائة مليون، ومائة ألف، ومائة");
-if (r==0) console.log("Test Case 5 - Option {Comma}     ....Passed.");
+if (r==0) console.log("Test Case 5 - Option {Comma}      ....Passed.");
 }
 
 function testCases6() {
 // ---- Test for separating Miah from number
-var r=0; // test tracker
+let r=0; // test tracker
 r |= test(300  ,{SplitHund:"on"},"ثلاث مائة");
 r |= test(500  ,{SplitHund:"on"},"خمس مائة");
 r |= test(600  ,{SplitHund:"on"},"ست مائة");
 r |= test(2700 ,{SplitHund:"on"},"ألفان وسبع مائة");
-if (r==0) console.log("Test Case 6 - Option {SplitHund} ....Passed.");
+if (r==0) console.log("Test Case 6 - Option {SplitHund}  ....Passed.");
 }
 
 function testCases7() {
 // ---- Test for text to be followed
-var r=0; // test tracker
+let r=0; // test tracker
 r |= test(200     ,{TextAfter:"on"},"مائتا");
 r |= test(2000    ,{TextAfter:"on"},"ألفا");
 r |= test(2000_000,{TextAfter:"on"},"مليونا");
+r |= test(200     ,{Accusative:"on",TextAfter:"on"},"مائتي");
+r |= test(2000    ,{Accusative:"on",TextAfter:"on"},"ألفي");
+r |= test(2000000 ,{Accusative:"on",TextAfter:"on"},"مليوني");
 
-if (r==0) console.log("Test Case 7 - Option {Text After}....Passed.");
+if (r==0) console.log("Test Case 7 - Option {TextAfter}  ....Passed.");
 }
+
+function testCases8() {
+// ---- Test for Accusative Case
+let r=0; // test tracker
+r |= test(2002002000  ,{UseBillions:"on"},"بليونان ومليونان وألفان");
+r |= test(2452452000  ,{UseBillions:"on"},"بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا");
+r |= test(2452002000  ,{UseBillions:"on"},"بليونان وأربعمائة واثنان وخمسون مليونًا وألفان");
+r |= test(255000000000,{UseBillions:"on"},"مائتان وخمسة وخمسون بليونًا");
+if (r==0) console.log("Test Case 8 - Option {UseBillions}....Passed.");
+}
+
+function testCases9() {
+// ---- Test for Accusative Case
+let r=0; // test tracker
+r |= test(2,{Accusative:"on"},"اثنين");
+r |= test(12,{Accusative:"on"},"اثني عشر");
+r |= test(20,{Accusative:"on"},"عشرين");
+r |= test(21,{Accusative:"on"},"واحد وعشرين");
+r |= test(22,{Accusative:"on"},"اثنين وعشرين");
+r |= test(23,{Accusative:"on"},"ثلاثة وعشرين");
+r |= test(30,{Accusative:"on"},"ثلاثين");
+r |= test(102,{Accusative:"on"},"مائة واثنين");
+r |= test(120,{Accusative:"on"},"مائة وعشرين");
+r |= test(121,{Accusative:"on"},"مائة وواحد وعشرين");
+r |= test(122,{Accusative:"on"},"مائة واثنين وعشرين");
+r |= test(123,{Accusative:"on"},"مائة وثلاثة وعشرين");
+r |= test(199,{Accusative:"on"},"مائة وتسعة وتسعين");
+r |= test(200,{Accusative:"on"},"مائتين");
+r |= test(202,{Accusative:"on"},"مائتين واثنين");
+r |= test(2000,{Accusative:"on"},"ألفين");
+r |= test(2001,{Accusative:"on"},"ألفين وواحد");
+r |= test(2002,{Accusative:"on"},"ألفين واثنين");
+r |= test(2022,{Accusative:"on"},"ألفين واثنين وعشرين");
+r |= test(2200,{Accusative:"on"},"ألفين ومائتين");
+r |= test(10200,{Accusative:"on"},"عشرة آلاف ومائتين");
+r |= test(12002,{Accusative:"on"},"اثني عشر ألفًا واثنين");
+r |= test(100002,{Accusative:"on"},"مائة ألف واثنين");
+r |= test(200000,{Accusative:"on"},"مائتي ألف");
+r |= test(200002,{Accusative:"on"},"مائتي ألف واثنين");
+r |= test(2002002,{Accusative:"on"},"مليونين وألفين واثنين");
+r |= test(2002000,{Accusative:"on"},"مليونين وألفين");
+r |= test(2002002000,{Accusative:"on"},"مليارين ومليونين وألفين");
+r |= test(2452452000,{Accusative:"on"},"مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا");
+r |= test(2452002000,{Accusative:"on"},"مليارين وأربعمائة واثنين وخمسين مليونًا وألفين");
+r |= test(16588464060,{Accusative:"on"},"ستة عشر مليارًا وخمسمائة وثمانية وثمانين مليونًا وأربعمائة وأربعة وستين ألفًا وستين");
+r |= test(25933508149,{Accusative:"on"},"خمسة وعشرين مليارًا وتسعمائة وثلاثة وثلاثين مليونًا وخمسمائة وثمانية آلاف ومائة وتسعة وأربعين");
+r |= test(200000000,{Accusative:"on"},"مائتي مليون");
+r |= test(2000000,{Accusative:"on"},"مليونين");
+r |= test(200222200,{Accusative:"on"},"مائتي مليون ومائتين واثنين وعشرين ألفًا ومائتين");
+
+if (r==0) console.log("Test Case 9 - Option {Accusative} ....Passed.");
+}
+
 
 //------------------
 function test(n,flags,should) {
 let result = numberToWordsAr(n,flags);
 if (result !== should) {console.log(`${n} Output   : ${result}\n${n} Should be: ${should}`);return 1;}
 }
-
-
