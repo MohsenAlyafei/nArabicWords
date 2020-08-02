@@ -213,36 +213,41 @@ function testCases2() {
 }
 
 function testCases3() {
-// ---- Test for Feminine Numbers
-var r=0; // test tracker
-r |= test(""    ,{Feminine:"on"},"صفر");
-r |= test(1     ,{Feminine:"on"},"واحدة");
-r |= test(2     ,{Feminine:"on"},"اثنتان");
-r |= test(3     ,{Feminine:"on"},"ثلاث");
-r |= test(4     ,{Feminine:"on"},"أربع");
-r |= test(5     ,{Feminine:"on"},"خمس");
-r |= test(6     ,{Feminine:"on"},"ست");
-r |= test(7     ,{Feminine:"on"},"سبع");
-r |= test(8     ,{Feminine:"on"},"ثمان");
-r |= test(9     ,{Feminine:"on"},"تسع");
-r |= test(10    ,{Feminine:"on"},"عشر");
-r |= test(11    ,{Feminine:"on"},"إحدى عشرة");
-r |= test(12    ,{Feminine:"on"},"إثنتا عشرة");
-r |= test(13    ,{Feminine:"on"},"ثلاث عشرة");
-r |= test(14    ,{Feminine:"on"},"أربع عشرة");
-r |= test(15    ,{Feminine:"on"},"خمس عشرة");
-r |= test(16    ,{Feminine:"on"},"ست عشرة");
-r |= test(17    ,{Feminine:"on"},"سبع عشرة");
-r |= test(18    ,{Feminine:"on"},"ثمان عشرة");
-r |= test(19    ,{Feminine:"on"},"تسع عشرة");
-r |= test(20    ,{Feminine:"on"},"عشرون");
-r |= test(2013  ,{Feminine:"on"},"ألفان وثلاث عشرة");
-r |= test(213013,{Feminine:"on"},"مائتان وثلاثة عشر ألفًا وثلاث عشرة");
-r |= test(13013 ,{Feminine:"on"},"ثلاثة عشر ألفًا وثلاث عشرة");
-r |= test(200002,{Feminine:"on"},"مائتا ألف واثنتان");
-
-if (r==0) console.log("Test Case 3 - Option {Feminine}  ....Passed.");
-}
+  // ---- Test for Feminine Numbers
+  var r=0; // test tracker
+  r |= test(""    ,{Feminine:"on"},"صفر");
+  r |= test(1     ,{Feminine:"on"},"واحدة");
+  r |= test(2     ,{Feminine:"on"},"اثنتان");
+  r |= test(3     ,{Feminine:"on"},"ثلاث");
+  r |= test(4     ,{Feminine:"on"},"أربع");
+  r |= test(5     ,{Feminine:"on"},"خمس");
+  r |= test(6     ,{Feminine:"on"},"ست");
+  r |= test(7     ,{Feminine:"on"},"سبع");
+  r |= test(8     ,{Feminine:"on"},"ثمان");
+  r |= test(9     ,{Feminine:"on"},"تسع");
+  r |= test(10    ,{Feminine:"on"},"عشر");
+  r |= test(11    ,{Feminine:"on"},"إحدى عشرة");
+  r |= test(12    ,{Feminine:"on"},"إثنتا عشرة");
+  r |= test(13    ,{Feminine:"on"},"ثلاث عشرة");
+  r |= test(14    ,{Feminine:"on"},"أربع عشرة");
+  r |= test(15    ,{Feminine:"on"},"خمس عشرة");
+  r |= test(16    ,{Feminine:"on"},"ست عشرة");
+  r |= test(17    ,{Feminine:"on"},"سبع عشرة");
+  r |= test(18    ,{Feminine:"on"},"ثمان عشرة");
+  r |= test(19    ,{Feminine:"on"},"تسع عشرة");
+  r |= test(20    ,{Feminine:"on"},"عشرون");
+  r |= test(21    ,{Feminine:"on"},"إحدى وعشرون");
+  r |= test(22    ,{Feminine:"on"},"اثنتان وعشرون");
+  r |= test(23    ,{Feminine:"on"},"ثلاث وعشرون");
+  r |= test(24    ,{Feminine:"on"},"أربع وعشرون");
+  r |= test(2013  ,{Feminine:"on"},"ألفان وثلاث عشرة");
+  r |= test(213013,{Feminine:"on"},"مائتان وثلاثة عشر ألفًا وثلاث عشرة");
+  r |= test(13013 ,{Feminine:"on"},"ثلاثة عشر ألفًا وثلاث عشرة");
+  r |= test(200002,{Feminine:"on"},"مائتا ألف واثنتان");
+  r |= test(1     ,{Feminine:"on"},"واحدة");
+  r |= test(2     ,{Feminine:"on"},"اثنتان");
+  if (r==0) console.log("Test Case 3 - Option {Feminine}  ....Passed.");
+  }
 
 
 function testCases4() {
@@ -289,3 +294,5 @@ function test(n,flags,should) {
 let result = numberToWordsAr(n,flags);
 if (result !== should) {console.log(`${n} Output   : ${result}\n${n} Should be: ${should}`);return 1;}
 }
+
+
