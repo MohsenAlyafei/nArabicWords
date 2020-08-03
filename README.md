@@ -50,7 +50,7 @@ All of the above defaults (and more) may be changed with the option setting.
 
 ## 4. Option Settings
 
-### 4.1 Summary Options Table
+### Summary Options Table
 
 | No.| Option |Default|Purpose  
 |:---:|:---|:---:|:-----
@@ -62,7 +62,7 @@ All of the above defaults (and more) may be changed with the option setting.
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
 |7|TextAfter      |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text.
 
-### 4.2 Option {Feminine : "on"}
+### 4.1 Option {Feminine : "on"}
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammartically correct result.
 
@@ -84,7 +84,7 @@ console.log( numberToWordsAr(200011,{Feminine:"on"}) );    // "مائتا ألف
     
 ```
 
-### 4.3 Option {Miah : "on"}
+### 4.2 Option {Miah : "on"}
 
 This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
 This option affects all places where the word Hundred is used.
@@ -107,7 +107,7 @@ console.log( numberToWordsAr(350,{Miah:"on"}) );           // "ثلاثمئة و
 ```
 
 
-### 4.4 Option {SplitHund : "on"}
+### 4.3 Option {SplitHund : "on"}
 
 This option permits the splitting/seprataion of the unit name from the hundred word. Some Arabic countries consider that this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة"becomes "أربع مائة", and so on.
 
@@ -130,7 +130,7 @@ console.log( numberToWordsAr(600) );            // "ست مائة"
 console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة"
 ```
 
-### 4.5 Option {Comma : "on"}
+### 4.4 Option {Comma : "on"}
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text especially for large numbers.
 
@@ -149,4 +149,26 @@ console.log( numberToWordsAr(122500    ,{Comma:"on"}) );  // "مائة واثن�
 console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليون، ومائة ألف، ومائة")
 ```
 
+
+### 4.5 Option {Billions : "on"}
+
+This option permits the use of the pure Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the Arabic Short Scale System is exactly a Short Scale System except that the word Billion at 10^9 is replaced with Miliard (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار milyar, except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
+
+Examples:
+
+With the defults:
+
+```javascript
+console.log( numberToWordsAr(2002002000) );                     // "ملياران ومليونان وألفان"
+console.log( numberToWordsAr(2452452000) );                     // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( numberToWordsAr((2452002000) );                    // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( numberToWordsAr(255000000000) );                   // "مائتان وخمسة وخمسون مليارًا"
+```
+Outputs with the option {Miah: "on"} becomes:
+
+```javascript
+console.log( numberToWordsAr(2002002000  ,{Billions:"on"}) );   // "بليونان ومليونان وألفان"
+console.log( numberToWordsAr(2452452000  ,{Billions:"on"}) );   // "بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( numberToWordsAr((2452002000  ,{Billions:"on"}) );  // "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( numberToWordsAr(255000000000,{Billions:"on"}) );   // "مائتان وخمسة وخمسون بليونًا"
 
