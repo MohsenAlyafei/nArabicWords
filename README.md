@@ -1,6 +1,6 @@
-# Number to Arabic Words with Grammar
+# Numbers to Arabic Words with Grammar
 
-### The untility function provides a simple and effective method to converts Numbers (Integers) to Arabic Words in accordance with Arabic grammar rules.
+### The untility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with Arabic grammar rules.
 
 # How to use
 
@@ -51,5 +51,19 @@ The utility uses the following as defaults:
 All of the above defaults (and more) may be changed with the option setting.
 
 ## Option Settings
+
+### Summary Options Table
+
+| No.| Option |Default|Purpose  
+|:---:|:---|:---:|:-----
+|1|Feminine       |off|Produce output text for a feminine subject.
+|2|Miah           |off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
+|3|SplitHund      |off| Use separation between number and hundred words (e.g. ثلاثمائة becomes ثلاث مائة).
+|4|Comma          |off| Insert a comma between triplet number text.
+|5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
+|6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominitive (رفع).
+|7|TextAfter      |off| Indicates that there will be text to follow the resulting number text. This permits proper subject name to be added after the resulting text.
+
+
 
 
