@@ -1,6 +1,6 @@
 # Numbers to Arabic Words with Grammar
 
-### The utility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with Arabic grammar rules.
+### The utility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings.
 
 ### 1. Syntax:
 
@@ -86,7 +86,7 @@ console.log( numberToWordsAr(200011,{Feminine:"on"}) );    // "مائتا ألف
 
 ### 4.3 Option {Miah : "on"}
 
-This options permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
+This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
 This option affects all places where the word Hundred is used.
 
 Examples:
@@ -105,3 +105,48 @@ console.log( numberToWordsAr(100,{Miah:"on"}) );           // "مئة"
 console.log( numberToWordsAr(200,{Miah:"on"}) );           // "مئتان"
 console.log( numberToWordsAr(350,{Miah:"on"}) );           // "ثلاثمئة وخمسون"
 ```
+
+
+### 4.4 Option {SplitHund : "on"}
+
+This option permits the splitting/seprataion of the unit name from the hundred word. Some Arabic countries consider that this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة"becomes "أربع مائة", and so on.
+
+Examples:
+
+With the defults:
+
+```javascript
+console.log( numberToWordsAr(300) );            // "ثلاثمائة"
+console.log( numberToWordsAr(500) );            // "خمسمائة"
+console.log( numberToWordsAr(600) );            // "ستمائة"
+console.log( numberToWordsAr(2700) );           // "ألفان وسبعمائة"
+```
+Outputs with the option {Miah: "on"} becomes:
+
+```javascript
+console.log( numberToWordsAr(300) );            // "ثلاث مائة"
+console.log( numberToWordsAr(500) );            // "خمس مائة"
+console.log( numberToWordsAr(600) );            // "ست مائة"
+console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة"
+```
+
+### 4.5 Option {Comma : "on"}
+
+This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text especially for large numbers.
+
+Examples:
+
+With the defults:
+
+```javascript
+console.log( numberToWordsAr(122500) );                   // "مائة واثنان وعشرون ألفًا وخمسمائة"
+console.log( numberToWordsAr(100100100) );                // "مائة مليون ومائة ألف ومائة"
+```
+Outputs with the option {Miah: "on"} becomes:
+
+```javascript
+console.log( numberToWordsAr(122500    ,{Comma:"on"}) );  // "مائة واثنان وعشرون ألفًا، وخمسمائة")
+console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليون، ومائة ألف، ومائة")
+```
+
+
