@@ -1,10 +1,10 @@
 # Numbers to Arabic Words with Grammar
 
-### The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings. It does not use any extrnal dependancies (libraries) and is short that you can just copy and paste it into your larger application for immediate use.
+#### The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings. It does not use any extrnal dependancies (libraries) and is short that you can just copy and paste it into your larger application for immediate use.
 
 ### 1. Syntax:
 
-#### numberToWordsAr( number [{options}] );
+#### numberToWordsAr( number , [ {options} ] );
 
 ### 2. Examples:
 
@@ -196,9 +196,9 @@ However, if you we want to write "2000 books". You cannot sipmply say "ألفا�
 
 The output should be "ألفا كتاب".
 
-Another example: 20,000 lakes should be "عشرون ألف دولار" and not "عشرون ألفًا دولار".
+Another example: 20,000 Dollars should be written as "عشرون ألف دولار" and not "عشرون ألفًا دولار".
 
-This Option terefore permits the converted output text to be made suitable for a text to follow.
+This Option terefore permits the converted output text to be made suitable for a text to follow it.
 
 
 Examples with both the defults and with the option {TextAfter: "on"}:
@@ -217,3 +217,10 @@ console.log( numberToWordsAr(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Cor
 console.log( numberToWordsAr(20000) +"دولار" );                        // Incorrect ouput:"عشرون ألفًا دولار"
 console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
 ```
+
+### 5. Increasing the Scale
+
+The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
+Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
+
+
