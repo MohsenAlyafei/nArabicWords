@@ -11,9 +11,9 @@
 In it s basic form, the function can be simply invoked for any number like this:
 
 ```javascript
-console.log(numberToWordsAr(2000));         // "ألفان"
-console.log(numberToWordsAr(15000120));     // "خمسة عشر مليونًا ومائة وعشرون"
-console.log(numberToWordsAr(2020));         // "ألفان وعشرون"
+console.log( numberToWordsAr(2000) );         // "ألفان"
+console.log( numberToWordsAr(15000120) );     // "خمسة عشر مليونًا ومائة وعشرون"
+console.log( numberToWordsAr(2020) );         // "ألفان وعشرون"
 
 ```
 Output:
@@ -26,7 +26,7 @@ Output:
 If the number is too large to be handled by the system/javascript, place the number in quotes, example:
 
 ```javascript
-console.log(numberToWordsAr("233000000000000000000000"));
+console.log(numberToWordsAr( "233000000000000000000000") );
 ```
 Output:
 ```javascript
@@ -69,8 +69,19 @@ If the "subject" to be counted is "feminine" then use this option to produce the
 Examples:
 
 ```javascript
-numberToWordsAr(12);                    // Default: "اثنا عشر"
-numberToWordsAr(12, {Feminine:"on"});   // "اثنتا عشرة"
+console.log( numberToWordsAr(12) );                       // "اثنا عشر"
+console.log( numberToWordsAr(23) );                       // "ثلاثة وعشرون"
+console.log( numberToWordsAr(13013) );                    // "ثلاثة عشر ألفًا وثلاثة عشر"
+console.log( numberToWordsAr(200011) );                   // "مائتا ألف وأحد عشر"
+```
+Outputs with the option {Feminine : "on"} becomes:
+
+```javascript
+console.log( numberToWordsAr(12, {Feminine:"on"}) );       // "اثنتا عشرة"
+console.log( numberToWordsAr(23,{Feminine:"on"}) );        // "ثلاث وعشرون"
+console.log( numberToWordsAr(13013 ,{Feminine:"on"}) );    // "ثلاثة عشر ألفًا وثلاث عشرة"
+console.log( numberToWordsAr(200011,{Feminine:"on"}) );    // "مائتا ألف وإحدى عشرة"
+    
 ```
 
 ### 4.3 Option {Miah : "on"}
@@ -80,17 +91,17 @@ This option affects all places where the word Hundred is used.
 
 Examples:
 
-The defults of the following:
+With the defults:
 
 ```javascript
-numberToWordsAr(100);                    // Default: "مائة"
-numberToWordsAr(200);                    // Default: "مائتان"
-numberToWordsAr(350);                    // Default: "ثلاثمائة وخمسون"
+console.log( numberToWordsAr(100) );                       // Default: "مائة"
+console.log( numberToWordsAr(200) );                       // Default: "مائتان"
+console.log( numberToWordsAr(350) );                       // Default: "ثلاثمائة وخمسون"
 ```
-becomes:
+Outputs with the option {Miah: "on"} becomes:
 
 ```javascript
-numberToWordsAr(100,{Miah:"on"});        // Default: "مئة"
-numberToWordsAr(200,{Miah:"on"});        // Default: "مئتان"
-numberToWordsAr(350,{Miah:"on"});        // Default: "ثلاثمئة وخمسون"
+console.log( numberToWordsAr(100,{Miah:"on"}) );           // "مئة"
+console.log( numberToWordsAr(200,{Miah:"on"}) );           // "مئتان"
+console.log( numberToWordsAr(350,{Miah:"on"}) );           // "ثلاثمئة وخمسون"
 ```
