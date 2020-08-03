@@ -1,6 +1,6 @@
 # Numbers to Arabic Words with Grammar
 
-### The untility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with Arabic grammar rules.
+### The utility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with Arabic grammar rules.
 
 # How to use
 
@@ -35,14 +35,14 @@ Output:
 مائتان وثلاثة وثلاثون سكستليونًا
 ```
 
-***As can be seen from the above, the default output is using the Nominitave grammar case (حالة الرفع).***
+***As can be seen from the above, the default output is using the Nominative grammar case (حالة الرفع).***
 
 ## Defaults:
 
 The utility uses the following as defaults:
 
-1. Nominitative Grammar Case (حالة الرفع).
-2. Musculine Subject.
+1. Nominative Grammar Case (حالة الرفع).
+2. Masculine Subject.
 3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
 4. The word "مائة" for the Hundreds.
 5. No text as assumed to be after the result text.
@@ -61,9 +61,5 @@ All of the above defaults (and more) may be changed with the option setting.
 |3|SplitHund      |off| Use separation between number and hundred words (e.g. ثلاثمائة becomes ثلاث مائة).
 |4|Comma          |off| Insert a comma between triplet number text.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
-|6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominitive (رفع).
-|7|TextAfter      |off| Indicates that there will be text to follow the resulting number text. This permits proper subject name to be added after the resulting text.
-
-
-
-
+|6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
+|7|TextAfter      |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text.
