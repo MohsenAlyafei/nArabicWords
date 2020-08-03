@@ -92,13 +92,13 @@ Examples with both the defults and with the option {Miah: "on"}:
 With the defults:
 
 ```javascript
-console.log( numberToWordsAr(100) );                  // Default: "مائة"
+console.log( numberToWordsAr(100) );                  // "مائة"
 console.log( numberToWordsAr(100,{Miah:"on"}) );      // "مئة"
 
-console.log( numberToWordsAr(200) );                  // Default: "مائتان"
+console.log( numberToWordsAr(200) );                  // "مائتان"
 console.log( numberToWordsAr(200,{Miah:"on"}) );      // "مئتان"
 
-console.log( numberToWordsAr(350) );                  // Default: "ثلاثمائة وخمسون"
+console.log( numberToWordsAr(350) );                  // "ثلاثمائة وخمسون"
 console.log( numberToWordsAr(350,{Miah:"on"}) );      // "ثلاثمئة وخمسون"
 ```
 
@@ -179,6 +179,6 @@ console.log( numberToWordsAr(12,{AG:"on"}) );         // "اثني عشر"
 console.log( numberToWordsAr((122) );                 // "مائة واثنان وعشرون"
 console.log( numberToWordsAr((122,{AG:"on"}) );       // "مائة واثنين وعشرين"
 
-console.log( numberToWordsAr(2452452000) );           //"ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
-console.log( numberToWordsAr(2452452000,{AG:"on"}) ); //"مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
+console.log( numberToWordsAr(2452452000) );           // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( numberToWordsAr(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
 ```
