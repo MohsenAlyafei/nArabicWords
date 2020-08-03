@@ -60,7 +60,7 @@ All of the above defaults (and more) may be changed with the option settings.
 |4|Comma          |off| Insert a comma between triplet number text.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
-|7|TextAfter      |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text.
+|7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammarly correct text to be generated for the number.
 
 ### 4.1 Option {Feminine : "on"}
 
@@ -183,3 +183,37 @@ console.log( numberToWordsAr(2452452000) );           // "ملياران وأر�
 console.log( numberToWordsAr(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
 ```
 
+
+### 4.7 Option {TextToFollow : "on"}
+
+The output text assume by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follo-on text.
+
+Take this example:
+
+The number 2000 will be converted to "ألفان". This is correct output for a standalone text.
+
+However, if you we want to write "2000 books". You cannot sipmply say "ألفان كتاب". This is incorrect Arabic.
+
+The output should be "ألفا كتاب".
+
+Another example: 20,000 lakes should be "عشرون ألف دولار" and not "عشرون ألفًا دولار".
+
+This Option terefore permits the converted output text to be made suitable for a text to follow.
+
+
+Examples with both the defults and with the option {TextAfter: "on"}:
+
+```javascript
+
+console.log( numberToWordsAr(200) +"دينار" );                         // Incorrect ouput: "مائتان دينار"
+console.log( numberToWordsAr(200 ,{TextToFollow:"on"}) +"دينار" );    // Correct output : "مائتا دينار"
+
+console.log( numberToWordsAr(2000) +"جنيه" );                         // Incorrect ouput:"ألفان جنيه"
+console.log( numberToWordsAr(2000 ,{TextToFollow:"on"}) +"جنيه" );    // Correct output :"ألفا جنيه"
+
+console.log( numberToWordsAr(2000000) +"كتاب" );                      // Incorrect ouput:"مليونان كتاب"
+console.log( numberToWordsAr(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Correct output :"مليونا كتاب"
+
+console.log( numberToWordsAr(20000) +"دولار" );                        // Incorrect ouput:"عشرون ألفًا دولار"
+console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
+```
