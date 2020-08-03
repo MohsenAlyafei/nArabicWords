@@ -1,6 +1,6 @@
 # Numbers to Arabic Words with Grammar
 
-#### The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings. It does not use any extrnal dependancies (libraries) and is short that you can just copy and paste it into your larger application for immediate use.
+#### The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings. It does not use any external dependencies (libraries) and is short that you can just copy and paste it into your larger application for immediate use.
 
 ### 1. Syntax:
 
@@ -60,13 +60,13 @@ All of the above defaults (and more) may be changed with the option settings.
 |4|Comma          |off| Insert a comma between triplet number text.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
-|7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammarly correct text to be generated for the number.
+|7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
 
 ### 4.1 Option {Feminine : "on"}
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
-Examples with both the defults and with the option {Feminine : "on"}:
+Examples with both the defults and with the option ***{Feminine : "on"}***{:
 
 ```javascript
 console.log( numberToWordsAr(12) );                      // "اثنا عشر"
@@ -87,7 +87,7 @@ console.log( numberToWordsAr(200011,{Feminine:"on"}) );  // "مائتا ألف �
 This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
 This option affects all places where the word Hundred is used.
 
-Examples with both the defults and with the option {Miah: "on"}:
+Examples with both the defaults and with the option ***{Miah: "on"}***:
 
 With the defults:
 
@@ -106,7 +106,7 @@ console.log( numberToWordsAr(350,{Miah:"on"}) );      // "ثلاثمئة وخم�
 
 This option permits the splitting/separation of the unit name from the hundred words. Some Arabic countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
-Examples with both the defults and with the option {SplitHund: "on"}:
+Examples with both the defaults and with the option ***{SplitHund: "on"}***{:
 
 With the defults:
 
@@ -128,7 +128,7 @@ console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
-Examples with both the defults and with the option {Comma: "on"}:
+Examples with both the defaults and with the option ***{Comma: "on"}***{:
 
 With the defults:
 
@@ -145,7 +145,7 @@ console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليو�
 
 This option permits the use of the pure Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the Arabic Short Scale System is exactly a Short Scale System except that the word Billion at 10^9 is replaced with Miliard (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
-Examples with both the defults and with the option {Billions: "on"}:
+Examples with both the defaults and with the option ***{Billions: "on"}***{:
 
 With the defults:
 
@@ -167,7 +167,7 @@ console.log( numberToWordsAr(255000000000,{Billions:"on"}) );   // "مائتان
 
 Using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
 
-Examples with both the defults and with the option {AG: "on"}:
+Examples with both the defults and with the option ***{AG: "on"}***{:
 
 ```javascript
 console.log( numberToWordsAr(2) );                    // "اثنان"
@@ -186,22 +186,22 @@ console.log( numberToWordsAr(2452452000,{AG:"on"}) ); // "مليارين وأر�
 
 ### 4.7 Option {TextToFollow : "on"}
 
-The output text assume by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follo-on text.
+The output text assumes by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follow-on text.
 
 Take this example:
 
-The number 2000 will be converted to "ألفان". This is correct output for a standalone text.
+The number 2000 will be converted to "ألفان". This is the correct output for a standalone text.
 
-However, if you we want to write "2000 books". You cannot sipmply say "ألفان كتاب". This is incorrect Arabic.
+However, if you we want to write "2000 books". You cannot simply say "ألفان كتاب". This is incorrect Arabic.
 
-The output should be "ألفا كتاب".
+The output should be "***ألفا كتاب***".
 
-Another example: 20,000 Dollars should be written as "عشرون ألف دولار" and not "عشرون ألفًا دولار".
+Another example: 20,000 Dollars should be written as "***عشرون ألف دولار***" and not "عشرون ألفًا دولار".
 
-This Option terefore permits the converted output text to be made suitable for a text to follow it.
+This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
 
-Examples with both the defults and with the option {TextAfter: "on"}:
+Examples with both the defaults and with the option ***{TextAfter: "on"}***{:
 
 ```javascript
 
@@ -228,4 +228,3 @@ For example to ncrease the Scale to Quattuordecillion (كواتوردسليون)
 const TableScales =["","ألف","مليون","مليار","ترليون","كوادرليون","كوينتليون","سكستليون","سبتليون","وكتليون","نونليون","دسليون","وندسليون","ديودسليون","تريدسليون","كواتوردسليون"],
 
 ```
-
