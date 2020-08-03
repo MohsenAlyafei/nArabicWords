@@ -34,3 +34,16 @@ Output:
 ```javascript
 مائتان وثلاثة وثلاثون سكستليونًا
 ```
+
+***As can be seen from the above, the default output is using the Nominitave grammar case (حالة الرفع).***
+
+## Defaults:
+
+The utility uses the following as defaults:
+
+1. Nominitative Grammar Case (حالة الرفع).
+2. Musculine Subject.
+3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
+4. The word "مائة" for the Hundreds.
+5. No text as assumed to be after the result text.
+6. Maximum scale of 
