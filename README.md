@@ -6,16 +6,16 @@ The function provides a simple yet accurate method for converting Numbers (Integ
 
 The function does not use any external dependencies (libraries) and is sufficiently short that you can (if needed) just copy and paste it into your larger application code for immediate use.
 
-### Syntax
+### Syntax:
 
     numberToWordsAr(number,[ {options} ])
 
 ### Parameters:
 
-number: Integer in Numeric or String form.
+**number**: Integer in Numeric or String form.
 The number may be in Arabic-Indic format (as a string).
 
-options: Options passed as object {name:value}. See below
+**options**: Options passed as object {name:value}. See below
 
 ### Rturn Value:
 
@@ -24,7 +24,7 @@ An Arabic text string of the converted number.
 
 ## 2. Examples of General Use
 
-In it s basic form, the function can be simply invoked for any number by passing only the first paraneter; as follows:
+In it s basic form, the function can simply be invoked for any integer numbers by passing only the first paraneter; as follows:
 
 ```javascript
 console.log( numberToWordsAr(2000) );         // "ألفان"
@@ -82,7 +82,7 @@ All of the above defaults (and more) may be changed with the option settings.
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
-Examples with both the defults and with the option ***{Feminine : "on"}***:
+Examples with both the default and with the option ***{Feminine : "on"}***:
 
 ```javascript
 console.log( numberToWordsAr(12) );                      // "اثنا عشر"
@@ -103,7 +103,7 @@ console.log( numberToWordsAr(200011,{Feminine:"on"}) );  // "مائتا ألف �
 This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
 This option affects all places where the word Hundred is used.
 
-Examples with both the defaults and with the option ***{Miah: "on"}***:
+Examples with both the default and with the option ***{Miah: "on"}***:
 
 With the defults:
 
@@ -122,7 +122,7 @@ console.log( numberToWordsAr(350,{Miah:"on"}) );      // "ثلاثمئة وخم�
 
 This option permits the splitting/separation of the unit name from the hundred words. Some Arabic countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
-Examples with both the defaults and with the option ***{SplitHund: "on"}***:
+Examples with both the default and with the option ***{SplitHund: "on"}***:
 
 With the defults:
 
@@ -144,7 +144,7 @@ console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
-Examples with both the defaults and with the option ***{Comma: "on"}***:
+Examples with both the default and with the option ***{Comma: "on"}***:
 
 With the defults:
 
@@ -159,9 +159,9 @@ console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليو�
 
 ### 4.5 Option {Billions : "on"}
 
-This option permits the use of the pure Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the Arabic Short Scale System is exactly a Short Scale System except that the word Billion at 10^9 is replaced with Miliard (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
+This option permits the use of the pure (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
-Examples with both the defaults and with the option ***{Billions: "on"}***:
+Examples with both the default and with the option ***{Billions: "on"}***:
 
 With the defults:
 
@@ -181,9 +181,9 @@ console.log( numberToWordsAr(255000000000,{Billions:"on"}) );   // "مائتان
 
 ### 4.6 Option {AG : "on"}
 
-Using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
+When using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. The default being the Nominative case (رفع).
 
-Examples with both the defults and with the option ***{AG: "on"}***:
+Examples with both the defult and with the option ***{AG: "on"}***:
 
 ```javascript
 console.log( numberToWordsAr(2) );                    // "اثنان"
@@ -217,7 +217,7 @@ Another example: 20,000 Dollars should be written as "**عشرون ألف دول
 This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
 
-Examples with both the defaults and with the option ***{TextAfter: "on"}***:
+Examples with both the default and with the option ***{TextAfter: "on"}***:
 
 ```javascript
 
@@ -256,3 +256,10 @@ console.log( numberToWordsAr("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران 
 
 
 ***
+## 7. General Notes on Code
+
+1. Purposely, the function code is made short and heavily commented. Most code is added for the various options.
+
+2. Although the function handles integers only, a factional number (float) can be split and the function called for each part separately (the Whole Part and the Fractional Part).
+
+3. ES6 javascript features are mostly used. This should not create a problem for many browsers.
