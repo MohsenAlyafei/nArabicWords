@@ -46,4 +46,10 @@ The utility uses the following as defaults:
 3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
 4. The word "مائة" for the Hundreds.
 5. No text as assumed to be after the result text.
-6. Maximum scale of 
+6. Maximum scale of Sextillion (سكستليون) i.e. 1 with 23 zeros.
+
+All of the above defaults (and more) may be changed with the option setting.
+
+## Option Settings
+
+
