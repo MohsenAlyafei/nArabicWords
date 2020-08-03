@@ -44,7 +44,7 @@ The function uses the following as defaults:
 3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
 4. The word "مائة" for Hundreds.
 5. No text is assumed to be added after the resulting output text.
-6. Maximum scale of Sextillion (سكستليون) i.e. 1 with 23 zeros.
+6. Maximum scale of Sextillion (سكستليون) i.e. 10^21.
 
 All of the above defaults (and more) may be changed with the option settings.
 
@@ -223,4 +223,9 @@ console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // C
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
 Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
 
+For example to ncrease the Scale to Quattuordecillion (كواتوردسليون) (i.e. 10^45):
+```javascript
+const TableScales =["","ألف","مليون","مليار","ترليون","كوادرليون","كوينتليون","سكستليون","سبتليون","وكتليون","نونليون","دسليون","وندسليون","ديودسليون","تريدسليون","كواتوردسليون"],
+
+```
 
