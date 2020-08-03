@@ -2,9 +2,9 @@
 
 ## 1. Description
 
-The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (*and with options for*) Arabic grammar rules/settings.
+The function provides a simple yet accurate method for converting Numbers (Integers) to Arabic Words in accordance with (*and with options for*) Arabic grammar rules/settings.
 
-The function does not use any external dependencies (libraries) and is short that you can (if needed) just copy and paste it into your larger application code for immediate use.
+The function does not use any external dependencies (libraries) and is sufficiently short that you can (if needed) just copy and paste it into your larger application code for immediate use.
 
 ### Syntax
 
@@ -22,7 +22,7 @@ options: Options passed as object {name:value}. See below
 An Arabic text string of the converted number.
 
 
-## 2. Examples General Use
+## 2. Examples of General Use
 
 In it s basic form, the function can be simply invoked for any number by passing only the first paraneter; as follows:
 
@@ -49,11 +49,11 @@ Output:
 مائتان وثلاثة وثلاثون سكستليونًا
 ```
 
-***As can be seen from the above, the default output is using the Nominative grammar case (حالة الرفع).***
+*As can be seen from the above, the default output is using the Nominative grammar case (حالة الرفع).*
 
 ## 3. Defaults Values
 
-The function uses the following as defaults:
+The function uses the following common grammar rules as its defaults:
 
 1. Nominative Grammar Case (حالة الرفع).
 2. Masculine Subject.
@@ -234,7 +234,7 @@ console.log( numberToWordsAr(20000) +"دولار" );                        // I
 console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
 ```
 
-### 5. Increasing the Scale
+## 5. Increasing the Scale
 
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
 Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
@@ -244,3 +244,15 @@ For example to ncrease the Scale to Quattuordecillion (كواتوردسليون)
 const TableScales =["","ألف","مليون","مليار","ترليون","كوادرليون","كوينتليون","سكستليون","سبتليون","وكتليون","نونليون","دسليون","وندسليون","ديودسليون","تريدسليون","كواتوردسليون"],
 
 ```
+## 6. Using Arabic-Indic Numbers
+
+Arabic-Endic Numbers can be used instead of Arabic numbers if needed.
+
+Example:
+
+```javascript
+console.log( numberToWordsAr("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+```
+
+
+***
