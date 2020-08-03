@@ -1,6 +1,6 @@
 # Numbers to Arabic Words with Grammar
 
-### 1. Description
+## 1. Description
 
 The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (*and with options for*) Arabic grammar rules/settings.
 
@@ -22,7 +22,7 @@ options: Options passed as object {name:value}. See below
 An Arabic text string of the converted number.
 
 
-### 2. Examples General Use
+## 2. Examples General Use
 
 In it s basic form, the function can be simply invoked for any number by passing only the first paraneter; as follows:
 
