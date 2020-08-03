@@ -1,6 +1,6 @@
 # Numbers to Arabic Words with Grammar
 
-### The utility function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings.
+### The function provides a simple and effective method for converting Numbers (Integers) to Arabic Words in accordance with (and with options for) Arabic grammar rules/settings. It does not use any extrnal dependancies (libraries) and is short that you can just copy and paste it into your larger application for immediate use.
 
 ### 1. Syntax:
 
@@ -8,7 +8,7 @@
 
 ### 2. Examples:
 
-In it s basic form, the function can be simply invoked for any number like this:
+In it s basic form, the function can be simply invoked for any number by passing only the first paraneter; as follows:
 
 ```javascript
 console.log( numberToWordsAr(2000) );         // "ألفان"
@@ -26,7 +26,7 @@ Output:
 If the number is too large to be handled by the system/javascript, place the number in quotes, example:
 
 ```javascript
-console.log(numberToWordsAr( "233000000000000000000000") );
+console.log(numberToWordsAr( "233000000000000000000000") ); // مائتان وثلاثة وثلاثون سكستليونًا
 ```
 Output:
 ```javascript
@@ -37,16 +37,16 @@ Output:
 
 ## 3. Defaults:
 
-The utility uses the following as defaults:
+The function uses the following as defaults:
 
 1. Nominative Grammar Case (حالة الرفع).
 2. Masculine Subject.
 3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
-4. The word "مائة" for the Hundreds.
-5. No text as assumed to be after the result text.
+4. The word "مائة" for Hundreds.
+5. No text is assumed to be added after the resulting output text.
 6. Maximum scale of Sextillion (سكستليون) i.e. 1 with 23 zeros.
 
-All of the above defaults (and more) may be changed with the option setting.
+All of the above defaults (and more) may be changed with the option settings.
 
 ## 4. Option Settings
 
@@ -64,7 +64,7 @@ All of the above defaults (and more) may be changed with the option setting.
 
 ### 4.1 Option {Feminine : "on"}
 
-If the "subject" to be counted is "feminine" then use this option to produce the grammartically correct result.
+If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
 Examples:
 
@@ -109,7 +109,7 @@ console.log( numberToWordsAr(350,{Miah:"on"}) );           // "ثلاثمئة و
 
 ### 4.3 Option {SplitHund : "on"}
 
-This option permits the splitting/seprataion of the unit name from the hundred word. Some Arabic countries consider that this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة"becomes "أربع مائة", and so on.
+This option permits the splitting/separation of the unit name from the hundred words. Some Arabic countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
 Examples:
 
@@ -132,7 +132,7 @@ console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة
 
 ### 4.4 Option {Comma : "on"}
 
-This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text especially for large numbers.
+This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
 Examples:
 
@@ -142,7 +142,7 @@ With the defults:
 console.log( numberToWordsAr(122500) );                   // "مائة واثنان وعشرون ألفًا وخمسمائة"
 console.log( numberToWordsAr(100100100) );                // "مائة مليون ومائة ألف ومائة"
 ```
-Outputs with the option {Miah: "on"} becomes:
+Outputs with the option {Comma: "on"} becomes:
 
 ```javascript
 console.log( numberToWordsAr(122500    ,{Comma:"on"}) );  // "مائة واثنان وعشرون ألفًا، وخمسمائة")
@@ -152,7 +152,7 @@ console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليو�
 
 ### 4.5 Option {Billions : "on"}
 
-This option permits the use of the pure Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the Arabic Short Scale System is exactly a Short Scale System except that the word Billion at 10^9 is replaced with Miliard (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار milyar, except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
+This option permits the use of the pure Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the Arabic Short Scale System is exactly a Short Scale System except that the word Billion at 10^9 is replaced with Miliard (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
 Examples:
 
@@ -164,11 +164,33 @@ console.log( numberToWordsAr(2452452000) );                     // "مليارا
 console.log( numberToWordsAr((2452002000) );                    // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
 console.log( numberToWordsAr(255000000000) );                   // "مائتان وخمسة وخمسون مليارًا"
 ```
-Outputs with the option {Miah: "on"} becomes:
+Outputs with the option {Billions: "on"} becomes:
 
 ```javascript
 console.log( numberToWordsAr(2002002000  ,{Billions:"on"}) );   // "بليونان ومليونان وألفان"
 console.log( numberToWordsAr(2452452000  ,{Billions:"on"}) );   // "بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 console.log( numberToWordsAr((2452002000  ,{Billions:"on"}) );  // "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
 console.log( numberToWordsAr(255000000000,{Billions:"on"}) );   // "مائتان وخمسة وخمسون بليونًا"
+```
 
+### 4.6 Option {AG : "on"}
+
+Using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
+
+Examples:
+
+With the defults and with the option {AG: "on"}:
+
+```javascript
+console.log( numberToWordsAr(2) );                    // "اثنان"
+console.log( numberToWordsAr(2,{AG:"on"}) );          // "اثنين"
+
+console.log( numberToWordsAr(12) );                   // "اثنا عشر"
+console.log( numberToWordsAr(12,{AG:"on"}) );         // "اثني عشر"
+
+console.log( numberToWordsAr((122) );                 // "مائة واثنان وعشرون"
+console.log( numberToWordsAr((122,{AG:"on"}) );       // "مائة واثنين وعشرين"
+
+console.log( numberToWordsAr(2452452000) );           //"ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( numberToWordsAr(2452452000,{AG:"on"}) ); //"مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
+```
