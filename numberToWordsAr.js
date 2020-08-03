@@ -58,8 +58,6 @@ Table11_19[1] = Ahad;                   // Musculine starting words for 11
 Table11_19[2] = Ethna;                  // Musculine starting words for 12
 TableUnits[2] = Ethnan;                 // Musculine word 2
 
-//if (UseBillions)
-
 NumIn = "0".repeat((NumIn+="").length * 2 % 3) + NumIn; // Convert Number to a Triplets String
 let L = NumIn.length;
 for (digits= L; digits>0; digits-=3) {                  // Loop and convert each Triplet
