@@ -194,9 +194,9 @@ The number 2000 will be converted to "ألفان". This is the correct output fo
 
 However, if you we want to write "2000 books". You cannot simply say "ألفان كتاب". This is incorrect Arabic.
 
-The output should be "***ألفا كتاب***".
+The output should be "**ألفا كتاب**".
 
-Another example: 20,000 Dollars should be written as "***عشرون ألف دولار***" and not "عشرون ألفًا دولار".
+Another example: 20,000 Dollars should be written as "**عشرون ألف دولار**" and not "عشرون ألفًا دولار".
 
 This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
