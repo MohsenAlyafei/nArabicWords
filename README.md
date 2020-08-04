@@ -21,14 +21,14 @@ The purpose was therefore to produce a **standalone javascript utility function*
 - Provide the ability to produce output in a legally unambiguous form.
 
 ### Syntax:
-
-    nArabicWords(number,[ {options} ])
-
+```javascript
+    nArabicWords(number, [ {options} ])
+```
 ### Parameters:
 
 **number**: Integer in Numeric or String form.
-Large numbers may be passed in a string form.
-Numbers may be passed in Arabic-Indic format (as a string) if needed.
+Large numbers may be passed in a string form if required.
+Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩) (as a string), if required.
 
 **options**: Options passed as object {name:value}. See below summary table and detailed explanation of each option.
 
@@ -351,6 +351,7 @@ As additional protection against any ambiguity, it is advisable to enable the op
 ## 5. Increasing the Scale
 
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
+
 Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
 
 For example to increase the Scale to Quattuordecillion (كواتوردسليون) (i.e. 10^45):
@@ -361,7 +362,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
 
 ## 6. Using Arabic-Indic Numbers
 
-Arabic-Endic Numbers can be used instead of Arabic numbers if needed.
+Arabic-Endic Numbers can be used instead of Arabic numbers if needed. In fact, a mix of Arabic and Arabic-Endic numbers is permitted.
 
 Example:
 
@@ -372,8 +373,8 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 ## 7. General Notes on Code
 
-1. Purposely, the function code is made short and heavily commented. Most code is added for the various options.
+1. Purposely, the function code is made short and heavily commented (see description above for reasons). Most of the code had been added to cater for the various options.
 
-2. Although the function handles integers only, a factional number (float) can be split and the function called for each part separately (the Whole Part and the Fractional Part).
+2. Although the function handles integers only, a factional number (float) may be split and the function is called for each part separately (the Whole Part and the Fractional Part).
 
-3. ES6 javascript features are mostly used. This should not create a problem for many browsers.
+3. The simple wrapper function can be added to create a tool for converting currency number to the equivalent Arabic text.
