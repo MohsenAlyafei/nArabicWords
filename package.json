@@ -1,0 +1,25 @@
+{
+  "name": "nArabicWords",
+  "version": "0.0.1",
+  "description": "A JavaScript Arabic numbers to words tool.",
+  "main": "nArabicWords.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohsenAlyafei/nArabicWords.git"
+  },
+  "keywords": [
+    "arqam",
+    "numbers",
+    "arabicnumbers",
+    "arabic-numbers",
+    "arabic numbers",
+    "numbers-to-text",
+    "arabic-to-text",
+    "tafqeet",
+    "tafgeet"
+  ],
+  "author": "",
+  "homepage": "https://github.com/MohsenAlyafei/nArabicWords#readme"
+
+}
