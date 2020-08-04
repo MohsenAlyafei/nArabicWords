@@ -1,5 +1,5 @@
 {
-  "name": "nArabicWords",
+  "name": "narabicwords",
   "version": "0.0.1",
   "description": "A JavaScript Arabic numbers to words tool.",
   "main": "nArabicWords.js",
