@@ -72,12 +72,12 @@ The function uses the following common grammar rules as its defaults:
 
 1. Nominative Grammar Case (حالة الرفع).
 2. Masculine Subject.
-3. The Arabic Short Scale Numbering Systems (i.e. Short Scale with Miliard (مليار)).
-4. The word "مائة" for Hundreds.
-5. No text is assumed to be added after the resulting output text.
+3. The Arabic Short Scale Numbering Systems (*i.e. Short Scale with Miliard (مليار)*).
+4. The word "مائة" for Hundreds. *Note hundred when written as "مائة" must always be pronounced as "مئة".*
+5. Standalone number; i.e. no text is assumed to be added after the resulting output text.
 6. Maximum scale of Sextillion (سكستليون) i.e. 10^21.
 
-All of the above defaults (and more) may be changed with the option settings.
+All of the above defaults (and more) may be changed with the option settings (see below).
 
 ## 4. Option Settings
 
@@ -117,7 +117,8 @@ console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإ�
 
 ### 4.2 Option {Miah : "on"}
 
-This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
+This option permits the word "مائة" to be changed to "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
+
 This option affects all places where the word Hundred is used.
 
 Examples with both the default and with the option **{Miah: "on"}**:
@@ -137,24 +138,24 @@ console.log( nArabicWords(350,{Miah:"on"}) ); // "ثلاثمئة وخمسون"
 
 ### 4.3 Option {SplitHund : "on"}
 
-This option permits the splitting/separation of the unit name from the hundred words. Some Arabic countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
+This option permits the splitting/separation of the unit name from the hundred words.
+
+Some Arabic-speaking countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
 Examples with both the default and with the option **{SplitHund: "on"}**:
 
-With the defaults:
-
 ```javascript
-console.log( nArabicWords(300) );   // "ثلاثمائة"
-console.log( nArabicWords(300) );   // "ثلاث مائة"
+console.log( nArabicWords(300) );                    // "ثلاثمائة"
+console.log( nArabicWords(300, {SplitHund:"on"}) );  // "ثلاث مائة"
 
-console.log( nArabicWords(500) );   // "خمسمائة"
-console.log( nArabicWords(500) );   // "خمس مائة"
+console.log( nArabicWords(500) );                    // "خمسمائة"
+console.log( nArabicWords(500, {SplitHund:"on"}) );  // "خمس مائة"
 
-console.log( nArabicWords(600) );    // "ستمائة"
-console.log( nArabicWords(600) );    // "ست مائة"
+console.log( nArabicWords(600) );                    // "ستمائة"
+console.log( nArabicWords(600, {SplitHund:"on"}) );  // "ست مائة"
 
-console.log( nArabicWords(2700) );   // "ألفان وسبعمائة"
-console.log( nArabicWords(2700) );   // "ألفان وسبع مائة"
+console.log( nArabicWords(2700) );                   // "ألفان وسبعمائة"
+console.log( nArabicWords(2700, {SplitHund:"on"}) ); // "ألفان وسبع مائة"
 ```
 
 ### 4.4 Option {Comma : "on"}
@@ -278,7 +279,9 @@ The array holding the subject name shall be in the following form:
 
 The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
 
-*(\*) Note: When combining tis option with the **{AG: "on"}** option for Accusative/Genitive (جر/نصب) cases, the subject names for 2's need to be adjusted appropriately.*
+*(\*) Note: When combining this option with the **{AG: "on"}** option for Accusative/Genitive (جر/نصب) cases, the subject names for 2's need to be adjusted appropriately.*
+
+The array must contain the four (4) elements; if the array is incomplete, this option will be ignored
 
 For example:
 
@@ -290,9 +293,9 @@ let Students = ["طالب",
                
 console.log( nArabicWords(1, {Subject:Students}) );    // "طالب واحد"
 console.log( nArabicWords(2, {Subject:Students}) );    // "طالبان اثنان"
-console.log( nArabicWords(3, {Subject:Students}) );    // ""ثلاثة طلاب""
-console.log( nArabicWords(10, {Subject:Students}) );   // ""عشرة طلاب""
-console.log( nArabicWords(21, {Subject:Students}) );   // ""واحد وعشرون طالبًا""
+console.log( nArabicWords(3, {Subject:Students}) );    // "ثلاثة طلاب"
+console.log( nArabicWords(10, {Subject:Students}) );   // "عشرة طلاب"
+console.log( nArabicWords(21, {Subject:Students}) );   // "واحد وعشرون طالبًا"
 console.log( nArabicWords(350, {Subject:Students}) );  // "ثلاثمائة وخمسون طالبًا"
 ```
 
@@ -310,9 +313,9 @@ let Money = ["ليرة",
                
 console.log( nArabicWords(1,  {Subject:Students, Feminine:"on"}) );    // "ليرة واحدة"
 console.log( nArabicWords(2,  {Subject:Students, Feminine:"on"}) );    // "ليرتان اثنتان"
-console.log( nArabicWords(3,  {Subject:Students, Feminine:"on"}) );    // ""ثلاثة ليرات""
-console.log( nArabicWords(10,  {Subject:Students, Feminine:"on"}) );   // ""عشر ليرات""
-console.log( nArabicWords(21,  {Subject:Students, Feminine:"on"}) );   // ""واحد وعشرون ليرةً""
+console.log( nArabicWords(3,  {Subject:Students, Feminine:"on"}) );    // "ثلاثة ليرات"
+console.log( nArabicWords(10,  {Subject:Students, Feminine:"on"}) );   // "عشر ليرات"
+console.log( nArabicWords(21,  {Subject:Students, Feminine:"on"}) );   // "واحد وعشرون ليرةً"
 console.log( nArabicWords(350, {Subject:Students, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
 ```
 
