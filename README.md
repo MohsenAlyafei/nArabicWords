@@ -83,6 +83,8 @@ All of the above defaults (and more) may be changed with the option settings.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
 |7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
+|8|Subject        |off| Produce out including the subject name. The Subject name is passed as array holding the 4 textual forms. The correct form is used for the type of the number.
+|9|Legal          |off| Output in a legal non-mmbiguous form.
 
 ### 4.1 Option {Feminine : "on"}
 
@@ -210,9 +212,9 @@ console.log( numberToWordsAr(2452452000,{AG:"on"}) ); // "مليارين وأر�
 
 The output text assumes by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follow-on text.
 
-Take this example:
+Consider the following example:
 
-The number 2000 will be converted to "ألفان". This is the correct output for a standalone text.
+The number 2000 will normally be converted to "ألفان". This is the correct output for a standalone text.
 
 However, if you we want to write "2000 books". You cannot simply say "ألفان كتاب". This is incorrect Arabic.
 
@@ -240,6 +242,105 @@ console.log( numberToWordsAr(20000) +"دولار" );                        // I
 console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
 ```
 
+
+### 4.8 Option {Subject : [array]]}
+
+This option permits the "subject" name to be counted to be passed as an array in the four (4) textual grammar forms. The output text is produced using text that contains the proper subject name selected for the number.
+
+The array holding the subject name shall be in the following form:
+
+[0] = Default Name Singular      (e.g. "كتاب/تفاحة/دينار").
+
+[1] = Name for 2's (double)      (e.g. "كتابان/تفاحتان/ديناران").
+
+[2] = Name for plural            (e.g. "كتب/تفاحات/دنانير").
+
+[3] = Name Singular with Tanween (e.g. "كتابًا/تفاحةً/دينارًا").
+
+The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
+
+For example:
+
+```javascript
+let Students = ["طالب",
+                "طالبان",
+                "طلاب",
+                "طالبًا"];
+               
+console.log( numberToWordsAr(1, {Subject:Students}) );    // "طالب واحد"
+console.log( numberToWordsAr(2, {Subject:Students}) );    // "طالبان اثنان"
+console.log( numberToWordsAr(3, {Subject:Students}) );    // ""ثلاثة طلاب""
+console.log( numberToWordsAr(10, {Subject:Students}) );   // ""عشرة طلاب""
+console.log( numberToWordsAr(21, {Subject:Students}) );   // ""واحد وعشرون طالبًا""
+console.log( numberToWordsAr(350, {Subject:Students}) );  // "ثلاثمائة وخمسون طالبًا"
+```
+
+As can be seen from the above example, the appropriate form of the subject name is selected and inserted in the number in accordance with Arabic grammar.
+
+Of course, if the subject is "feminine", you will also need to enable the "Feminine" Option.
+
+An example for a feminine subject name:
+
+```javascript
+let Money = ["ليرة",
+             "ليرتان",
+             "ليرات",
+             "ليرةً"];
+               
+console.log( numberToWordsAr(1,  {Subject:Students, Feminine:"on"}) );    // "ليرة واحدة"
+console.log( numberToWordsAr(2,  {Subject:Students, Feminine:"on"}) );    // "ليرتان اثنتان"
+console.log( numberToWordsAr(3,  {Subject:Students, Feminine:"on"}) );    // ""ثلاثة ليرات""
+console.log( numberToWordsAr(10,  {Subject:Students, Feminine:"on"}) );   // ""عشر ليرات""
+console.log( numberToWordsAr(21,  {Subject:Students, Feminine:"on"}) );   // ""واحد وعشرون ليرةً""
+console.log( numberToWordsAr(350, {Subject:Students, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
+```
+
+### 4.9 Option {Legal : "on"}
+
+The output text is produced in a legal non-ambiguous form.
+
+Consider the following examples:
+
+```javascript
+console.log( numberToWordsAr(101,000) );                 // "مائة وألف"
+console.log( numberToWordsAr(102,010) );                 // "مائة وألفان وعشرة"
+```
+
+In the above examples, the output "مائة وألف" could mean 100 plus 1000 giving a total of 1,100. This of courses not intended what was intended is 101,000.
+Similarly, the second example could be read and interpreted to mean 100 + 2000 + 10 giving a total 2,110 instead of 102,010.
+
+The above situations are unacceptable when writing legal or official documents (especially when writing cheque books). Where there is an ambiguity or a dispute, the number in figures overrides the number in figures.
+
+Therefore, this option permits such situations of ambiguity to be avoided.
+
+The above examples cab ne re-done with the option ***{Legal: "on"}***:
+
+```javascript
+console.log( numberToWordsAr(101,000, {Legal:"on"}) );   // "مائة ألف وألف"
+console.log( numberToWordsAr(102,010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
+```
+
+As additional protection against any ambiguity, it is advisable to enable the option ***{Comma: "on"}*** to clearly indicate the separation of triplets.
+
+
+Examples with both the default and with the option ***{TextAfter: "on"}***:
+
+```javascript
+
+console.log( numberToWordsAr(200) +"دينار" );                         // Incorrect ouput: "مائتان دينار"
+console.log( numberToWordsAr(200 ,{TextToFollow:"on"}) +"دينار" );    // Correct output : "مائتا دينار"
+
+console.log( numberToWordsAr(2000) +"جنيه" );                         // Incorrect ouput:"ألفان جنيه"
+console.log( numberToWordsAr(2000 ,{TextToFollow:"on"}) +"جنيه" );    // Correct output :"ألفا جنيه"
+
+console.log( numberToWordsAr(2000000) +"كتاب" );                      // Incorrect ouput:"مليونان كتاب"
+console.log( numberToWordsAr(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Correct output :"مليونا كتاب"
+
+console.log( numberToWordsAr(20000) +"دولار" );                        // Incorrect ouput:"عشرون ألفًا دولار"
+console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
+```
+
+
 ## 5. Increasing the Scale
 
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
@@ -250,6 +351,7 @@ For example to ncrease the Scale to Quattuordecillion (كواتوردسليون)
 const TableScales =["","ألف","مليون","مليار","ترليون","كوادرليون","كوينتليون","سكستليون","سبتليون","وكتليون","نونليون","دسليون","وندسليون","ديودسليون","تريدسليون","كواتوردسليون"],
 
 ```
+
 ## 6. Using Arabic-Indic Numbers
 
 Arabic-Endic Numbers can be used instead of Arabic numbers if needed.
