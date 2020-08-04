@@ -6,17 +6,19 @@ The intention of the exercise was to provide a **general-purpose** function that
 
 The majority of websites providing such facility generally produce inaccurate and/or grammatically inaccurate outputs.
 
-The purpose was therefore to produce a short javascript code that includes the ability to correctly produce and handle the following:
+The purpose was therefore to produce a standalone javascript utility function that includes the ability to correctly produce and handle the following:
 
-- Correct Arabic text for all (integer) numbers 0 up to 10^21.
+- Grammatically correct Arabic text for all (integers) numbers 0 up to 10^21.
 - Gender-Sensitive Subjects (Masculine and Feminine).
 - Nominative, Accusative, and Genitive Arabic grammar cases (رفع، جر، ونصب).
 - Correct positioning of subject names for ones and twos.
 - The facility to include the subject name to be counted in the output text; correctly positioned for the appropriate number.
-- The different forms and standards of writing numbers in words as used in the different Arabic speaking countries.
-- Be self-contained and not relying on any external dependencies (other libraries).
+- Address and cover the different forms and standards of writing numbers in words as used in the different Arabic speaking countries.
+- Be self-contained and not rely on any external dependencies (other libraries).
 - Use Vanilla javascript code only (ES6).
 - Be sufficiently short and simple so that it can be simply copied and pasted in one's own code for immediate use.
+- Provides features as options with the defaults being the most accepted forms of standards for simple use and call of the function.
+- Provide the ability to produce output in a legally unambiguous form.
 
 ### Syntax:
 
