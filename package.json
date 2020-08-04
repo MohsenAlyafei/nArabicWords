@@ -3,6 +3,7 @@
   "version": "0.0.4",
   "description": "A JavaScript Arabic numbers to words tool.",
   "main": "narabicwords.js",
+  "unpkg": "nArabicWords.js",
   "license": "MIT",
   "repository": {
     "type": "git",
