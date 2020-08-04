@@ -1,4 +1,4 @@
-# Numbers to Arabic Words with Grammar
+# Grammatically Correct Numbers to Arabic Words
 
 ## 1. Description
 
@@ -6,9 +6,11 @@ The intention of the exercise was to provide a **general-purpose** function that
 
 The majority of websites providing such facilities generally produce inaccurate and/or grammatically inaccurate outputs.
 
+While Arabic grammar rules for pronouncing and writing numbers may be difficult to remember; they are nevertheless consistent and precise for hundreds of years; with only very minor modern variances.
+
 The purpose was therefore to produce a **standalone javascript utility function** that includes the ability to correctly produce and handle the following:
 
-- Grammatically correct Arabic text for all (integers) numbers 0 up to 10^21.
+- Grammatically correct Arabic text for integer numbers from 0 up to 10^21 and more.
 - Gender-Sensitive Subjects (Masculine and Feminine).
 - Nominative, Accusative, and Genitive Arabic grammar cases (رفع، جر، ونصب).
 - Correct positioning of subject names for ones and twos.
@@ -87,7 +89,7 @@ All of the above defaults (and more) may be changed with the option settings (se
 |:---:|:---|:---:|:-----
 |1|Feminine       |off| Produce output text for a feminine subject. Default is masculine.
 |2|Miah           |off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
-|3|SplitHund      |off| Use separation between number and hundred words (e.g. ثلاثمائة becomes ثلاث مائة).
+|3|SplitHund      |off| Use separation between the unit number and the hundred word (e.g. ثلاثمائة becomes ثلاث مائة).
 |4|Comma          |off| Insert a comma between triplet number text.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
