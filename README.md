@@ -2,15 +2,21 @@
 
 ## 1. Description
 
-The purpose of the function is to provide a general-use and a simple yet accurate method for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
+The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
 
-This includes the ability to correctly produce and handle:
-- Gender Subjects (Masculine and Feminine).
-- The Nominative, Accusative, and Genitive grammar cases (رفع، جر، ونصب).
+The majority of websites providing such facility generally produce inaccurate and/or grammatically inaccurate outputs.
+
+The purpose was therefore to produce a short javascript code that includes the ability to correctly produce and handle the following:
+
+- Correct Arabic text for all (integer) numbers 0 up to 10^21.
+- Gender-Sensitive Subjects (Masculine and Feminine).
+- Nominative, Accusative, and Genitive Arabic grammar cases (رفع، جر، ونصب).
 - Correct positioning of subject names for ones and twos.
-- The.. and ...
-
-The function does not use any external dependencies (libraries) and is sufficiently short that you can (if needed) just copy and paste it into your larger application code for immediate use.
+- The facility to include the subject name to be counted in the output text; correctly positioned for the appropriate number.
+- The different forms and standards of writing numbers in words as used in the different Arabic speaking countries.
+- Be self-contained and not relying on any external dependencies (other libraries).
+- Use Vanilla javascript code only (ES6).
+- Be sufficiently short and simple so that it can be simply copied and pasted in one's own code for immediate use.
 
 ### Syntax:
 
@@ -76,15 +82,15 @@ All of the above defaults (and more) may be changed with the option settings.
 
 | No.| Option |Default|Purpose  
 |:---:|:---|:---:|:-----
-|1|Feminine       |off| Produce output text for a feminine subject.
+|1|Feminine       |off| Produce output text for a feminine subject. Default is masculine.
 |2|Miah           |off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
 |3|SplitHund      |off| Use separation between number and hundred words (e.g. ثلاثمائة becomes ثلاث مائة).
 |4|Comma          |off| Insert a comma between triplet number text.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
 |7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
-|8|Subject        |off| Produce out including the subject name. The Subject name is passed as array holding the 4 textual forms. The correct form is used for the type of the number.
-|9|Legal          |off| Output in a legal non-mmbiguous form.
+|8|Subject        |off| Produce output text including the subject name. The Subject name is passed as an array holding the 4 textual forms. The correct form and text are then used for the type of number.
+|9|Legal          |off| Output in a legal non-ambiguous form.
 
 ### 4.1 Option {Feminine : "on"}
 
