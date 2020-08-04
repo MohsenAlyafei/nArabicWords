@@ -253,7 +253,7 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 ```
 
 
-### 4.8 Option {Subject : [array]]}
+### 4.8 Option {Subject : [array]}
 
 This option permits the "subject" name to be counted to be passed as an array in the four (4) textual grammar forms. The output text is produced using text that contains the proper subject name selected for the number.
 
@@ -377,4 +377,4 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 2. Although the function handles integers only, a factional number (float) may be split and the function is called for each part separately (the Whole Part and the Fractional Part).
 
-3. The simple wrapper function can be added to create a tool for converting currency number to the equivalent Arabic text.
+3. With the feature and option using {Subject [array]}}, a simple wrapper function can be added to create a tool for converting currency numbers to the equivalent Arabic text.
