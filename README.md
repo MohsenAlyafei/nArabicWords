@@ -247,15 +247,17 @@ console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // C
 
 This option permits the "subject" name to be counted to be passed as an array in the four (4) textual grammar forms. The output text is produced using text that contains the proper subject name selected for the number.
 
+Not only does this ensure that the correct subject/number text is properly associated but will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
+
 The array holding the subject name shall be in the following form:
 
-[0] = Default Name Singular      (e.g. "كتاب/تفاحة/دينار").
+[0] = Name **Singular**      (e.g. "كتاب/تفاحة/دينار").
 
-[1] = Name for 2's (double)      (e.g. "كتابان/تفاحتان/ديناران").
+[1] = Name for 2's (**double**)      (e.g. "كتابان/تفاحتان/ديناران").
 
-[2] = Name for plural            (e.g. "كتب/تفاحات/دنانير").
+[2] = Name for **Pplural**            (e.g. "كتب/تفاحات/دنانير").
 
-[3] = Name Singular with Tanween (e.g. "كتابًا/تفاحةً/دينارًا").
+[3] = Name **Singular Tanween** (e.g. "كتابًا/تفاحةً/دينارًا").
 
 The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
 
@@ -306,12 +308,13 @@ console.log( numberToWordsAr(101,000) );                 // "مائة وألف"
 console.log( numberToWordsAr(102,010) );                 // "مائة وألفان وعشرة"
 ```
 
-In the above examples, the output "مائة وألف" could mean 100 plus 1000 giving a total of 1,100. This of courses not intended what was intended is 101,000.
-Similarly, the second example could be read and interpreted to mean 100 + 2000 + 10 giving a total 2,110 instead of 102,010.
+In the above examples, the output "مائة وألف" could be interpreted to mean 100 plus 1000 giving a total of 1,100. This of courses is not what is intended; what is intended is 101,000.
 
-The above situations are unacceptable when writing legal or official documents (especially when writing cheque books). Where there is an ambiguity or a dispute, the number in figures overrides the number in figures.
+Similarly, the second example could be interpreted to mean 100 + 2000 + 10 giving a total 2,110 instead of meaning 102,010.
 
-Therefore, this option permits such situations of ambiguity to be avoided.
+The above situations are unacceptable when writing legal or official documents (especially when writing cheque books). It is a common legal practise that where there exists an ambiguity or a dispute in the interstation of a number, then the number in words overrides the number in figures. Therefore, the words must be clear and unambiguous.
+
+This option permits such situations of ambiguity to be avoided.
 
 The above examples cab ne re-done with the option ***{Legal: "on"}***:
 
@@ -320,25 +323,7 @@ console.log( numberToWordsAr(101,000, {Legal:"on"}) );   // "مائة ألف و�
 console.log( numberToWordsAr(102,010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
 ```
 
-As additional protection against any ambiguity, it is advisable to enable the option ***{Comma: "on"}*** to clearly indicate the separation of triplets.
-
-
-Examples with both the default and with the option ***{TextAfter: "on"}***:
-
-```javascript
-
-console.log( numberToWordsAr(200) +"دينار" );                         // Incorrect ouput: "مائتان دينار"
-console.log( numberToWordsAr(200 ,{TextToFollow:"on"}) +"دينار" );    // Correct output : "مائتا دينار"
-
-console.log( numberToWordsAr(2000) +"جنيه" );                         // Incorrect ouput:"ألفان جنيه"
-console.log( numberToWordsAr(2000 ,{TextToFollow:"on"}) +"جنيه" );    // Correct output :"ألفا جنيه"
-
-console.log( numberToWordsAr(2000000) +"كتاب" );                      // Incorrect ouput:"مليونان كتاب"
-console.log( numberToWordsAr(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Correct output :"مليونا كتاب"
-
-console.log( numberToWordsAr(20000) +"دولار" );                        // Incorrect ouput:"عشرون ألفًا دولار"
-console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
-```
+As additional protection against any ambiguity, it is advisable to enable the option ***{Comma: "on"}*** to clearly indicate the separation between triplets.
 
 
 ## 5. Increasing the Scale
@@ -363,7 +348,6 @@ console.log( numberToWordsAr("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران 
 ```
 
 
-***
 ## 7. General Notes on Code
 
 1. Purposely, the function code is made short and heavily commented. Most code is added for the various options.
