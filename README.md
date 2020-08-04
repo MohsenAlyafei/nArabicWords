@@ -2,7 +2,13 @@
 
 ## 1. Description
 
-The function provides a simple yet accurate method for converting Numbers (Integers) to Arabic Words in accordance with (*and with options for*) Arabic grammar rules/settings.
+The purpose of the function is to provide a general-use and a simple yet accurate method for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
+
+This includes the ability to correctly produce and handle:
+- Gender Subjects (Masculine and Feminine).
+- The Nominative, Accusative, and Genitive grammar cases (رفع، جر، ونصب).
+- Correct positioning of subject names for ones and twos.
+- The.. and ...
 
 The function does not use any external dependencies (libraries) and is sufficiently short that you can (if needed) just copy and paste it into your larger application code for immediate use.
 
