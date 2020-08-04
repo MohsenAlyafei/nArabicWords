@@ -4,9 +4,9 @@
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
 
-The majority of websites providing such facility generally produce inaccurate and/or grammatically inaccurate outputs.
+The majority of websites providing such facilities generally produce inaccurate and/or grammatically inaccurate outputs.
 
-The purpose was therefore to produce a standalone javascript utility function that includes the ability to correctly produce and handle the following:
+The purpose was therefore to produce a **standalone javascript utility function** that includes the ability to correctly produce and handle the following:
 
 - Grammatically correct Arabic text for all (integers) numbers 0 up to 10^21.
 - Gender-Sensitive Subjects (Masculine and Feminine).
@@ -15,35 +15,36 @@ The purpose was therefore to produce a standalone javascript utility function th
 - The facility to include the subject name to be counted in the output text; correctly positioned for the appropriate number.
 - Address and cover the different forms and standards of writing numbers in words as used in the different Arabic speaking countries.
 - Be self-contained and not rely on any external dependencies (other libraries).
-- Use Vanilla javascript code only (ES6).
-- Be sufficiently short and simple so that it can be simply copied and pasted in one's own code for immediate use.
+- Use Vanilla JavaScript code only (ES6).
+- Be sufficiently short and simple so that it can (if needed) be simply copied and pasted in one's own code for immediate use.
 - Provides features as options with the defaults being the most accepted forms of standards for simple use and call of the function.
 - Provide the ability to produce output in a legally unambiguous form.
 
 ### Syntax:
 
-    numberToWordsAr(number,[ {options} ])
+    nArabicWords(number,[ {options} ])
 
 ### Parameters:
 
 **number**: Integer in Numeric or String form.
-The number may be in Arabic-Indic format (as a string).
+Large numbers may be passed in a string form.
+Numbers may be passed in Arabic-Indic format (as a string) if needed.
 
-**options**: Options passed as object {name:value}. See below
+**options**: Options passed as object {name:value}. See below summary table and detailed explanation of each option.
 
-### Rturn Value:
+### Return Value:
 
 An Arabic text string of the converted number.
 
 
 ## 2. Examples of General Use
 
-In it s basic form, the function can simply be invoked for any integer numbers by passing only the first paraneter; as follows:
+In it s basic form, the function can simply be invoked for an integer number by passing only the first parameter; as follows:
 
 ```javascript
-console.log( numberToWordsAr(2000) );         // "ألفان"
-console.log( numberToWordsAr(15000120) );     // "خمسة عشر مليونًا ومائة وعشرون"
-console.log( numberToWordsAr(2020) );         // "ألفان وعشرون"
+console.log( nArabicWords(2000) );     // "ألفان"
+console.log( nArabicWords(15000120) ); // "خمسة عشر مليونًا ومائة وعشرون"
+console.log( nArabicWords(2020) );     // "ألفان وعشرون"
 
 ```
 Output:
@@ -56,7 +57,7 @@ Output:
 If the number is too large to be handled by the system/javascript, place the number in quotes, for example:
 
 ```javascript
-console.log(numberToWordsAr( "233000000000000000000000") ); // مائتان وثلاثة وثلاثون سكستليونًا
+console.log(nArabicWords( "233000000000000000000000") ); // مائتان وثلاثة وثلاثون سكستليونًا
 ```
 Output:
 ```javascript
@@ -98,20 +99,20 @@ All of the above defaults (and more) may be changed with the option settings.
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
-Examples with both the default and with the option ***{Feminine : "on"}***:
+Examples with both the default and with the option **{Feminine : "on"}**:
 
 ```javascript
-console.log( numberToWordsAr(12) );                      // "اثنا عشر"
-console.log( numberToWordsAr(12, {Feminine:"on"}) );     // "اثنتا عشرة"
+console.log( nArabicWords(12) );                     // "اثنا عشر"
+console.log( nArabicWords(12, {Feminine:"on"}) );    // "اثنتا عشرة"
 
-console.log( numberToWordsAr(23) );                      // "ثلاثة وعشرون"
-console.log( numberToWordsAr(23,{Feminine:"on"}) );      // "ثلاث وعشرون"
+console.log( nArabicWords(23) );                     // "ثلاثة وعشرون"
+console.log( nArabicWords(23,{Feminine:"on"}) );     // "ثلاث وعشرون"
 
-console.log( numberToWordsAr(13013) );                   // "ثلاثة عشر ألفًا وثلاثة عشر"
-console.log( numberToWordsAr(13013 ,{Feminine:"on"}) );  // "ثلاثة عشر ألفًا وثلاث عشرة"
+console.log( nArabicWords(13013) );                  // "ثلاثة عشر ألفًا وثلاثة عشر"
+console.log( nArabicWords(13013 ,{Feminine:"on"}) ); // "ثلاثة عشر ألفًا وثلاث عشرة"
 
-console.log( numberToWordsAr(200011) );                  // "مائتا ألف وأحد عشر"
-console.log( numberToWordsAr(200011,{Feminine:"on"}) );  // "مائتا ألف وإحدى عشرة"
+console.log( nArabicWords(200011) );                 // "مائتا ألف وأحد عشر"
+console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإحدى عشرة"
 ```
 
 ### 4.2 Option {Miah : "on"}
@@ -119,57 +120,57 @@ console.log( numberToWordsAr(200011,{Feminine:"on"}) );  // "مائتا ألف �
 This option permits the word "مائة" to be changed to "مئة". Many country official documents prefer the use of the word "مئة".
 This option affects all places where the word Hundred is used.
 
-Examples with both the default and with the option ***{Miah: "on"}***:
+Examples with both the default and with the option **{Miah: "on"}**:
 
-With the defults:
+With the defaults:
 
 ```javascript
-console.log( numberToWordsAr(100) );                  // "مائة"
-console.log( numberToWordsAr(100,{Miah:"on"}) );      // "مئة"
+console.log( nArabicWords(100) );             // "مائة"
+console.log( nArabicWords(100,{Miah:"on"}) ); // "مئة"
 
-console.log( numberToWordsAr(200) );                  // "مائتان"
-console.log( numberToWordsAr(200,{Miah:"on"}) );      // "مئتان"
+console.log( nArabicWords(200) );             // "مائتان"
+console.log( nArabicWords(200,{Miah:"on"}) ); // "مئتان"
 
-console.log( numberToWordsAr(350) );                  // "ثلاثمائة وخمسون"
-console.log( numberToWordsAr(350,{Miah:"on"}) );      // "ثلاثمئة وخمسون"
+console.log( nArabicWords(350) );             // "ثلاثمائة وخمسون"
+console.log( nArabicWords(350,{Miah:"on"}) ); // "ثلاثمئة وخمسون"
 ```
 
 ### 4.3 Option {SplitHund : "on"}
 
 This option permits the splitting/separation of the unit name from the hundred words. Some Arabic countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
-Examples with both the default and with the option ***{SplitHund: "on"}***:
+Examples with both the default and with the option **{SplitHund: "on"}**:
 
-With the defults:
+With the defaults:
 
 ```javascript
-console.log( numberToWordsAr(300) );            // "ثلاثمائة"
-console.log( numberToWordsAr(300) );            // "ثلاث مائة"
+console.log( nArabicWords(300) );   // "ثلاثمائة"
+console.log( nArabicWords(300) );   // "ثلاث مائة"
 
-console.log( numberToWordsAr(500) );            // "خمسمائة"
-console.log( numberToWordsAr(500) );            // "خمس مائة"
+console.log( nArabicWords(500) );   // "خمسمائة"
+console.log( nArabicWords(500) );   // "خمس مائة"
 
-console.log( numberToWordsAr(600) );            // "ستمائة"
-console.log( numberToWordsAr(600) );            // "ست مائة"
+console.log( nArabicWords(600) );    // "ستمائة"
+console.log( nArabicWords(600) );    // "ست مائة"
 
-console.log( numberToWordsAr(2700) );           // "ألفان وسبعمائة"
-console.log( numberToWordsAr(2700) );           // "ألفان وسبع مائة"
+console.log( nArabicWords(2700) );   // "ألفان وسبعمائة"
+console.log( nArabicWords(2700) );   // "ألفان وسبع مائة"
 ```
 
 ### 4.4 Option {Comma : "on"}
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
-Examples with both the default and with the option ***{Comma: "on"}***:
+Examples with both the default and with the option **{Comma: "on"}**:
 
-With the defults:
+With the defaults:
 
 ```javascript
-console.log( numberToWordsAr(122500) );                   // "مائة واثنان وعشرون ألفًا وخمسمائة"
-console.log( numberToWordsAr(122500    ,{Comma:"on"}) );  // "مائة واثنان وعشرون ألفًا، وخمسمائة"
+console.log( nArabicWords(122500) );                  // "مائة واثنان وعشرون ألفًا وخمسمائة"
+console.log( nArabicWords(122500    ,{Comma:"on"}) ); // "مائة واثنان وعشرون ألفًا، وخمسمائة"
 
-console.log( numberToWordsAr(100100100) );                // "مائة مليون ومائة ألف ومائة"
-console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليون، ومائة ألف، ومائة"
+console.log( nArabicWords(100100100) );               // "مائة مليون ومائة ألف ومائة"
+console.log( nArabicWords(100100100 ,{Comma:"on"}) ); // "مائة مليون، ومائة ألف، ومائة"
 ```
 
 
@@ -177,42 +178,42 @@ console.log( numberToWordsAr(100100100 ,{Comma:"on"}) );  // "مائة مليو�
 
 This option permits the use of the pure (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
-Examples with both the default and with the option ***{Billions: "on"}***:
+Examples with both the default and with the option **{Billions: "on"}**:
 
 With the defults:
 
 ```javascript
-console.log( numberToWordsAr(2002002000) );                     // "ملياران ومليونان وألفان"
-console.log( numberToWordsAr(2002002000  ,{Billions:"on"}) );   // "بليونان ومليونان وألفان"
+console.log( nArabicWords(2002002000) );                   // "ملياران ومليونان وألفان"
+console.log( nArabicWords(2002002000  ,{Billions:"on"}) ); // "بليونان ومليونان وألفان"
 
-console.log( numberToWordsAr(2452452000) );                     // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
-console.log( numberToWordsAr(2452452000  ,{Billions:"on"}) );   // "بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( nArabicWords(2452452000) );                   // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( nArabicWords(2452452000  ,{Billions:"on"}) ); // "بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 
-console.log( numberToWordsAr((2452002000) );                    // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
-console.log( numberToWordsAr((2452002000  ,{Billions:"on"}) );  // "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( nArabicWords((2452002000) );                  // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( nArabicWords((2452002000  ,{Billions:"on"}) );// "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
 
-console.log( numberToWordsAr(255000000000) );                   // "مائتان وخمسة وخمسون مليارًا"
-console.log( numberToWordsAr(255000000000,{Billions:"on"}) );   // "مائتان وخمسة وخمسون بليونًا"
+console.log( nArabicWords(255000000000) );                 // "مائتان وخمسة وخمسون مليارًا"
+console.log( nArabicWords(255000000000,{Billions:"on"}) ); // "مائتان وخمسة وخمسون بليونًا"
 ```
 
 ### 4.6 Option {AG : "on"}
 
 When using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. The default being the Nominative case (رفع).
 
-Examples with both the defult and with the option ***{AG: "on"}***:
+Examples with both the default and with the option **{AG: "on"}**:
 
 ```javascript
-console.log( numberToWordsAr(2) );                    // "اثنان"
-console.log( numberToWordsAr(2,{AG:"on"}) );          // "اثنين"
+console.log( nArabicWords(2) );                    // "اثنان"
+console.log( nArabicWords(2,{AG:"on"}) );          // "اثنين"
 
-console.log( numberToWordsAr(12) );                   // "اثنا عشر"
-console.log( numberToWordsAr(12,{AG:"on"}) );         // "اثني عشر"
+console.log( nArabicWords(12) );                   // "اثنا عشر"
+console.log( nArabicWords(12,{AG:"on"}) );         // "اثني عشر"
 
-console.log( numberToWordsAr((122) );                 // "مائة واثنان وعشرون"
-console.log( numberToWordsAr((122,{AG:"on"}) );       // "مائة واثنين وعشرين"
+console.log( nArabicWords((122) );                 // "مائة واثنان وعشرون"
+console.log( nArabicWords((122,{AG:"on"}) );       // "مائة واثنين وعشرين"
 
-console.log( numberToWordsAr(2452452000) );           // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
-console.log( numberToWordsAr(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
+console.log( nArabicWords(2452452000) );           // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
 ```
 
 
@@ -233,21 +234,21 @@ Another example: 20,000 Dollars should be written as "**عشرون ألف دول
 This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
 
-Examples with both the default and with the option ***{TextAfter: "on"}***:
+Examples with both the default and with the option **{TextAfter: "on"}**:
 
 ```javascript
 
-console.log( numberToWordsAr(200) +"دينار" );                         // Incorrect ouput: "مائتان دينار"
-console.log( numberToWordsAr(200 ,{TextToFollow:"on"}) +"دينار" );    // Correct output : "مائتا دينار"
+console.log( nArabicWords(200) +"دينار" );                         // Incorrect output: "مائتان دينار"
+console.log( nArabicWords(200 ,{TextToFollow:"on"}) +"دينار" );    // Correct output : "مائتا دينار"
 
-console.log( numberToWordsAr(2000) +"جنيه" );                         // Incorrect ouput:"ألفان جنيه"
-console.log( numberToWordsAr(2000 ,{TextToFollow:"on"}) +"جنيه" );    // Correct output :"ألفا جنيه"
+console.log( nArabicWords(2000) +"جنيه" );                         // Incorrect output:"ألفان جنيه"
+console.log( nArabicWords(2000 ,{TextToFollow:"on"}) +"جنيه" );    // Correct output :"ألفا جنيه"
 
-console.log( numberToWordsAr(2000000) +"كتاب" );                      // Incorrect ouput:"مليونان كتاب"
-console.log( numberToWordsAr(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Correct output :"مليونا كتاب"
+console.log( nArabicWords(2000000) +"كتاب" );                      // Incorrect output:"مليونان كتاب"
+console.log( nArabicWords(2000000 ,{TextToFollow:"on"}) +"كتاب" ); // Correct output :"مليونا كتاب"
 
-console.log( numberToWordsAr(20000) +"دولار" );                        // Incorrect ouput:"عشرون ألفًا دولار"
-console.log( numberToWordsAr(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
+console.log( nArabicWords(20000) +"دولار" );                        // Incorrect output:"عشرون ألفًا دولار"
+console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Correct output :"عشرون ألف دولار"
 ```
 
 
@@ -259,15 +260,25 @@ Not only does this ensure that the correct subject/number text is properly assoc
 
 The array holding the subject name shall be in the following form:
 
-[0] = Name **Singular**      (e.g. "كتاب/تفاحة/دينار").
+[0] = Name **Singular**
 
-[1] = Name for 2's (**double**)      (e.g. "كتابان/تفاحتان/ديناران").
+[1] = Name for 2's (**double**)
 
-[2] = Name for **Pplural**            (e.g. "كتب/تفاحات/دنانير").
+[2] = Name for **Plural**
 
-[3] = Name **Singular Tanween** (e.g. "كتابًا/تفاحةً/دينارًا").
+[3] = Name **Singular Tanween**
+
+
+| Array Element| Usage |Example 1|Example 2|Example 3|Example 4|Example 5|Example 6
+|:---:|:---|:-----|:-----|:-----|:-----|:-----|:-----
+|[0]|Name **Singular**       |دينار|تفاحة|كتاب|طالب|بنت|ليرة 
+|[1]|Name for 2's (**double**)(\*)  |ديناران|تفاحتان|كتابان|طالبان|بنتان|ليرتان 
+|[2]|Name for **Plural**      |دنانير|تفاحات|كتب|طلاب|بنات|ليرات 
+|[3]|Name **Singular Tanween**      |دينارًا|تفاحةً|كتابًا|طالبًا|بنتًا|ليرةً 
 
 The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
+
+*(\*) Note: When combining tis option with the **{AG: "on"}** option for Accusative/Genitive (جر/نصب) cases, the subject names for 2's need to be adjusted appropriately.*
 
 For example:
 
@@ -277,12 +288,12 @@ let Students = ["طالب",
                 "طلاب",
                 "طالبًا"];
                
-console.log( numberToWordsAr(1, {Subject:Students}) );    // "طالب واحد"
-console.log( numberToWordsAr(2, {Subject:Students}) );    // "طالبان اثنان"
-console.log( numberToWordsAr(3, {Subject:Students}) );    // ""ثلاثة طلاب""
-console.log( numberToWordsAr(10, {Subject:Students}) );   // ""عشرة طلاب""
-console.log( numberToWordsAr(21, {Subject:Students}) );   // ""واحد وعشرون طالبًا""
-console.log( numberToWordsAr(350, {Subject:Students}) );  // "ثلاثمائة وخمسون طالبًا"
+console.log( nArabicWords(1, {Subject:Students}) );    // "طالب واحد"
+console.log( nArabicWords(2, {Subject:Students}) );    // "طالبان اثنان"
+console.log( nArabicWords(3, {Subject:Students}) );    // ""ثلاثة طلاب""
+console.log( nArabicWords(10, {Subject:Students}) );   // ""عشرة طلاب""
+console.log( nArabicWords(21, {Subject:Students}) );   // ""واحد وعشرون طالبًا""
+console.log( nArabicWords(350, {Subject:Students}) );  // "ثلاثمائة وخمسون طالبًا"
 ```
 
 As can be seen from the above example, the appropriate form of the subject name is selected and inserted in the number in accordance with Arabic grammar.
@@ -297,12 +308,12 @@ let Money = ["ليرة",
              "ليرات",
              "ليرةً"];
                
-console.log( numberToWordsAr(1,  {Subject:Students, Feminine:"on"}) );    // "ليرة واحدة"
-console.log( numberToWordsAr(2,  {Subject:Students, Feminine:"on"}) );    // "ليرتان اثنتان"
-console.log( numberToWordsAr(3,  {Subject:Students, Feminine:"on"}) );    // ""ثلاثة ليرات""
-console.log( numberToWordsAr(10,  {Subject:Students, Feminine:"on"}) );   // ""عشر ليرات""
-console.log( numberToWordsAr(21,  {Subject:Students, Feminine:"on"}) );   // ""واحد وعشرون ليرةً""
-console.log( numberToWordsAr(350, {Subject:Students, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
+console.log( nArabicWords(1,  {Subject:Students, Feminine:"on"}) );    // "ليرة واحدة"
+console.log( nArabicWords(2,  {Subject:Students, Feminine:"on"}) );    // "ليرتان اثنتان"
+console.log( nArabicWords(3,  {Subject:Students, Feminine:"on"}) );    // ""ثلاثة ليرات""
+console.log( nArabicWords(10,  {Subject:Students, Feminine:"on"}) );   // ""عشر ليرات""
+console.log( nArabicWords(21,  {Subject:Students, Feminine:"on"}) );   // ""واحد وعشرون ليرةً""
+console.log( nArabicWords(350, {Subject:Students, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
 ```
 
 ### 4.9 Option {Legal : "on"}
@@ -312,8 +323,8 @@ The output text is produced in a legal non-ambiguous form.
 Consider the following examples:
 
 ```javascript
-console.log( numberToWordsAr(101,000) );                 // "مائة وألف"
-console.log( numberToWordsAr(102,010) );                 // "مائة وألفان وعشرة"
+console.log( nArabicWords(101,000) );                 // "مائة وألف"
+console.log( nArabicWords(102,010) );                 // "مائة وألفان وعشرة"
 ```
 
 In the above examples, the output "مائة وألف" could be interpreted to mean 100 plus 1000 giving a total of 1,100. This of courses is not what is intended; what is intended is 101,000.
@@ -324,14 +335,14 @@ The above situations are unacceptable when writing legal or official documents (
 
 This option permits such situations of ambiguity to be avoided.
 
-The above examples cab ne re-done with the option ***{Legal: "on"}***:
+The above examples cab ne re-done with the option **{Legal: "on"}**:
 
 ```javascript
-console.log( numberToWordsAr(101,000, {Legal:"on"}) );   // "مائة ألف وألف"
-console.log( numberToWordsAr(102,010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
+console.log( nArabicWords(101,000, {Legal:"on"}) );   // "مائة ألف وألف"
+console.log( nArabicWords(102,010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
 ```
 
-As additional protection against any ambiguity, it is advisable to enable the option ***{Comma: "on"}*** to clearly indicate the separation between triplets.
+As additional protection against any ambiguity, it is advisable to enable the option **{Comma: "on"}** to clearly indicate the separation between triplets.
 
 
 ## 5. Increasing the Scale
@@ -339,7 +350,7 @@ As additional protection against any ambiguity, it is advisable to enable the op
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
 Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
 
-For example to ncrease the Scale to Quattuordecillion (كواتوردسليون) (i.e. 10^45):
+For example to increase the Scale to Quattuordecillion (كواتوردسليون) (i.e. 10^45):
 ```javascript
 const TableScales =["","ألف","مليون","مليار","ترليون","كوادرليون","كوينتليون","سكستليون","سبتليون","وكتليون","نونليون","دسليون","وندسليون","ديودسليون","تريدسليون","كواتوردسليون"],
 
@@ -352,7 +363,7 @@ Arabic-Endic Numbers can be used instead of Arabic numbers if needed.
 Example:
 
 ```javascript
-console.log( numberToWordsAr("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
+console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 ```
 
 
