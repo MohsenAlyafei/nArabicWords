@@ -362,7 +362,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
 
 ## 6. Using Arabic-Indic Numbers
 
-Arabic-Endic Numbers can be used instead of Arabic numbers if needed. In fact, a mix of Arabic and Arabic-Endic numbers is permitted.
+Arabic-Indic Numbers can be used instead of Arabic numbers if needed. In fact, a mix of Arabic and Arabic-Indic numbers is permitted.
 
 Example:
 
