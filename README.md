@@ -217,6 +217,10 @@ console.log( nArabicWords(2452452000) );           // "ملياران وأربع
 console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
 ```
 
+- The following table summarizes the conditions under which numbers are converted from Nominative to Accusative/Genitive.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n3ep5yopgswhx6wirhyj.png)
+
 
 ### 4.7 Option {TextToFollow : "on"}
 
