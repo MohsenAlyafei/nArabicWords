@@ -1,10 +1,10 @@
 {
   "name": "narabicwords",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A JavaScript Arabic numbers to words tool.",
-  "main": "nArabicWords.js",
+  "main": "index.js",
   "type": "module",
-  "unpkg": "nArabicWords.js",
+  "unpkg": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
