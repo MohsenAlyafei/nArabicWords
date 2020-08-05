@@ -385,6 +385,9 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 3. With the feature and option using **{Subject [array]}**, a simple wrapper function can be added to create a tool for converting currency numbers to the equivalent Arabic text.
 
+## 8. NUmber to Arabic Words Summary Table
+
+The following table lists the numbers to Arabic words basic rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
 
