@@ -1,6 +1,15 @@
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/hjuwxi6ffq07a674btmq.png)
+### **Table Of Contents**
+[1. Introduction](#introduction)
+[2. Syntax and Parameters](#syntax)
+[3. Examples of General Use](#general)
+[4. Default Values](#defaulta)
+[5. Option Settings](#options)
+[6. Increasing the Scale](#scales)
+[7. Using Arabic-Indic Numbers](indic)
+[8. General Notes on Code](#notes)
+[9. Number to Arabic Words Translation Table](#table)
 
-## 1. Description
+### **1. Introduction** <a name="introduction"></a>
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
 
@@ -22,6 +31,8 @@ The purpose was therefore to produce a **standalone javascript utility function*
 - Provides features as options with the defaults being the most accepted forms of standards for simple use and call of the function.
 - Provide the ability to produce output in a legally unambiguous form.
 
+### **2. Syntax and Parameters** <a name="syntax"></a>
+
 ### Syntax:
 ```javascript
     nArabicWords(number, [ {options} ])
@@ -39,7 +50,7 @@ Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩)
 An Arabic text string of the converted number.
 
 
-## 2. Examples of General Use
+### 3. **Examples of General Use** <a name="general"></a>
 
 In it s basic form, the function can simply be invoked for an integer number by passing only the first parameter; as follows:
 
@@ -68,7 +79,7 @@ Output:
 
 *As can be seen from the above, the **default** output uses the Nominative grammar case (حالة الرفع).*
 
-## 3. Defaults Values
+### **4. Defaults Values** <a name="defaults"></a>
 
 The function uses the following common grammar rules as its defaults:
 
@@ -81,23 +92,23 @@ The function uses the following common grammar rules as its defaults:
 
 All of the above defaults (and more) may be changed with the option settings (see below).
 
-## 4. Option Settings
+### **5. Option Settings** <a name="options"></a>
 
 ### Summary Options Table
 
 | No.| Option |Default|Purpose  
 |:---:|:---|:---:|:-----
-|1|Feminine       |off| Produce output text for a feminine subject. Default is masculine.
-|2|Miah           |off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
-|3|SplitHund      |off| Use separation between the unit number and the hundred word (e.g. ثلاثمائة becomes ثلاث مائة).
-|4|Comma          |off| Inserts commas between triplet number strings.
-|5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
-|6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
-|7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
-|8|Subject        |off| Produce output text including the subject name. The Subject name is passed as an array holding the 4 textual forms. The correct form and text are then used for the type of number.
-|9|Legal          |off| Output in a legal non-ambiguous form.
+|1|[Feminine](#feminine)|off| Produce output text for a feminine subject. Default is masculine.
+|2|[Miah](#miah)|off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
+|3|[SplitHund](#splithund)|off| Use separation between the unit number and the hundred word (e.g. ثلاثمائة becomes ثلاث مائة).
+|4|[Comma](#comma)|off| Inserts commas between triplet number strings.
+|5|[Billions](#billions)|off| Use Billions (بليون) instead of Millard (مليار).
+|6|[AG](#ag)|off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
+|7|[TextToFollow](#texttofollow)|off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
+|8|[Subject](#subject)|off| Produce output text including the subject name. The Subject name is passed as an array holding the 4 textual forms. The correct form and text are then used for the type of number.
+|9|[Legal](#legal)          |off| Output in a legal non-ambiguous form.
 
-### 4.1 Option {Feminine : "on"}
+### 5.1 Option \{Feminine : "on"\} <a name="feminine"></a>
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
@@ -117,7 +128,7 @@ console.log( nArabicWords(200011) );                 // "مائتا ألف وأ�
 console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإحدى عشرة"
 ```
 
-### 4.2 Option {Miah : "on"}
+### 5.2 Option {Miah : "on"}<a name="miah"></a>
 
 With this option, the default word "مائة" (for hundreds) is replaced with "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
 
@@ -138,7 +149,7 @@ console.log( nArabicWords(350) );             // "ثلاثمائة وخمسون"
 console.log( nArabicWords(350,{Miah:"on"}) ); // "ثلاثمئة وخمسون"
 ```
 
-### 4.3 Option {SplitHund : "on"}
+### 5.3 Option {SplitHund : "on"} <a name="splithund"></a>
 
 This option permits the splitting/separation of the unit name from the hundred words.
 
@@ -162,7 +173,7 @@ console.log( nArabicWords(2700) );                   // "ألفان وسبعما
 console.log( nArabicWords(2700, {SplitHund:"on"}) ); // "ألفان وسبع مائة"
 ```
 
-### 4.4 Option {Comma : "on"}
+### 5.4 Option {Comma : "on"}<a name="comma"></a>
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
@@ -179,7 +190,7 @@ console.log( nArabicWords(100100100 ,{Comma:"on"}) ); // "مائة مليون، 
 ```
 
 
-### 4.5 Option {Billions : "on"}
+### 5.5 Option {Billions : "on"}<a name="billions"></a>
 
 This option permits the use of the pure (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
@@ -201,7 +212,7 @@ console.log( nArabicWords(255000000000) );                 // "مائتان وخ
 console.log( nArabicWords(255000000000,{Billions:"on"}) ); // "مائتان وخمسة وخمسون بليونًا"
 ```
 
-### 4.6 Option {AG : "on"}
+### 5.6 Option {AG : "on"}<a name="ag"></a>
 
 When using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. The default being the Nominative case (رفع).
 
@@ -226,7 +237,7 @@ console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربع
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n3ep5yopgswhx6wirhyj.png)
 
 
-### 4.7 Option {TextToFollow : "on"}
+### 5.7 Option {TextToFollow : "on"}<a name="texttofollow"></a>
 
 The output text assumes by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follow-on text.
 
@@ -261,7 +272,7 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 ```
 
 
-### 4.8 Option {Subject : [array]}
+### 5.8 Option {Subject : [array]}<a name="subject"></a>
 
 This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms (for the singular, duo, plural, and tanween). The function picks up the correct form of subject name for the number and the output text is produced using text that contains the proper subject name appropriately selected for the number in question.
 
@@ -329,7 +340,7 @@ console.log( nArabicWords(21,  {Subject:Money, Feminine:"on"}) );   // "واحد
 console.log( nArabicWords(350, {Subject:Money, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
 ```
 
-### 4.9 Option {Legal : "on"}
+### 5.9 Option {Legal : "on"}<a name="legal"></a>
 
 The output text is produced in a legal non-ambiguous form.
 
@@ -358,7 +369,7 @@ console.log( nArabicWords(102010, {Legal:"on"}) );   // "مائةألف وألف
 As additional protection against any ambiguity, it is advisable to enable the option **{Comma: "on"}** to clearly indicate the separation between triplets.
 
 
-## 5. Increasing the Scale
+### **6. Increasing the Scale** <a name="scales"></a>
 
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
 
@@ -370,7 +381,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
 
 ```
 
-## 6. Using Arabic-Indic Numbers
+### **7. Using Arabic-Indic Numbers** <a name="indic"></a>
 
 Arabic-Indic Numbers can be used instead of Arabic numbers if needed. In fact, a mix of Arabic and Arabic-Indic numbers is permitted.
 
@@ -381,7 +392,7 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 ```
 
 
-## 7. General Notes on Code
+### **8. General Notes on Code** <a name="notes"></a>
 
 1. Purposely, the function code is made short and heavily commented (see description above for reasons). Most of the code had been added to cater for the various options.
 
@@ -389,10 +400,9 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 3. With the feature and option using **{Subject [array]}**, a simple wrapper function can be added to create a tool for converting currency numbers to the equivalent Arabic text.
 
-## 8. NUmber to Arabic Words Translation Table
+### **9. Number to Arabic Words Translation Table** <a name="table"></a>
 
 The following table lists the numbers to Arabic words basic rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
-
 
