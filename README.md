@@ -108,7 +108,7 @@ All of the above defaults (and more) may be changed with the option settings (se
 
 ### Summary Options Table
 
-| No.| Option |Default|Purpose  
+| No.| Option |Default|Purpose
 |:---:|:---|:---:|:-----
 |1|[Feminine](#feminine)|off| Produce output text for a feminine subject. Default is masculine.
 |2|[Miah](#miah)|off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
@@ -288,27 +288,27 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 
 This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms (for the singular, duo, plural, and tanween). The function picks up the correct form of subject name for the number and the output text is produced using text that contains the proper subject name appropriately selected for the number in question.
 
-Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
+Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's.
 
 The array holding the subject name shall be in the following form:
 
-Array elements [0] = Name **Singular**
+Array elements [0] = Subject Name **Singular**
 
-Array elements [1] = Name for 2's (**double**)
+Array elements [1] = Subject Name for 2's (**double**)
 
-Array elements [2] = Name for **Plural**
+Array elements [2] = Subject Name for **Plural**
 
-Array elements [3] = Name **Singular Tanween**
+Array elements [3] = Subject Name **Singular Tanween**
 
 
 Examples of arrays:
 
 | Array Element| Usage |Example 1|Example 2|Example 3|Example 4|Example 5|Example 6
 |:---:|:---|:-----|:-----|:-----|:-----|:-----|:-----
-|[0]|Name **Singular**       |دينار|تفاحة|كتاب|طالب|بنت|ليرة 
-|[1]|Name for 2's (**double**)(\*)  |ديناران|تفاحتان|كتابان|طالبان|بنتان|ليرتان 
-|[2]|Name for **Plural**      |دنانير|تفاحات|كتب|طلاب|بنات|ليرات 
-|[3]|Name **Singular Tanween**      |دينارًا|تفاحةً|كتابًا|طالبًا|بنتًا|ليرةً 
+|[0]|Name **Singular**       |دينار|تفاحة|كتاب|طالب|بنت|ليرة
+|[1]|Name for 2's (**double**)(\*)  |ديناران|تفاحتان|كتابان|طالبان|بنتان|ليرتان
+|[2]|Name for **Plural**      |دنانير|تفاحات|كتب|طلاب|بنات|ليرات
+|[3]|Name **Singular Tanween**      |دينارًا|تفاحةً|كتابًا|طالبًا|بنتًا|ليرةً
 
 The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
 
@@ -323,7 +323,7 @@ let Students = ["طالب",
                 "طالبان",
                 "طلاب",
                 "طالبًا"];
-               
+
 console.log( nArabicWords(1, {Subject:Students}) );    // "طالب واحد"
 console.log( nArabicWords(2, {Subject:Students}) );    // "طالبان اثنان"
 console.log( nArabicWords(3, {Subject:Students}) );    // "ثلاثة طلاب"
@@ -343,7 +343,7 @@ let Money = ["ليرة",
              "ليرتان",
              "ليرات",
              "ليرةً"];
-               
+
 console.log( nArabicWords(1,  {Subject:Money, Feminine:"on"}) );    // "ليرة واحدة"
 console.log( nArabicWords(2,  {Subject:Money, Feminine:"on"}) );    // "ليرتان اثنتان"
 console.log( nArabicWords(3,  {Subject:Money, Feminine:"on"}) );    // "ثلاثة ليرات"
