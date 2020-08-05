@@ -1,5 +1,3 @@
-# Grammatically Correct Numbers to Arabic Words
-
 ## 1. Description
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
@@ -90,7 +88,7 @@ All of the above defaults (and more) may be changed with the option settings (se
 |1|Feminine       |off| Produce output text for a feminine subject. Default is masculine.
 |2|Miah           |off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
 |3|SplitHund      |off| Use separation between the unit number and the hundred word (e.g. ثلاثمائة becomes ثلاث مائة).
-|4|Comma          |off| Insert a comma between triplet number text.
+|4|Comma          |off| Inserts commas between triplet number strings.
 |5|Billions       |off| Use Billions (بليون) instead of Millard (مليار).
 |6|AG             |off| Text is produced in the Accusative/Genitive (جر/نصب) case. Default is Nominative (رفع).
 |7|TextToFollow   |off| Indicates that there will be text to follow the resulting number text. This permits the proper subject name to be added after the resulting text and the grammatically correct text to be generated for the number.
@@ -192,8 +190,8 @@ console.log( nArabicWords(2002002000  ,{Billions:"on"}) ); // "بليونان و
 console.log( nArabicWords(2452452000) );                   // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 console.log( nArabicWords(2452452000  ,{Billions:"on"}) ); // "بليونان وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 
-console.log( nArabicWords((2452002000) );                  // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
-console.log( nArabicWords((2452002000  ,{Billions:"on"}) );// "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( nArabicWords(2452002000) );                   // "ملياران وأربعمائة واثنان وخمسون مليونًا وألفان"
+console.log( nArabicWords(2452002000  ,{Billions:"on"}) ); // "بليونان وأربعمائة واثنان وخمسون مليونًا وألفان"
 
 console.log( nArabicWords(255000000000) );                 // "مائتان وخمسة وخمسون مليارًا"
 console.log( nArabicWords(255000000000,{Billions:"on"}) ); // "مائتان وخمسة وخمسون بليونًا"
@@ -212,8 +210,8 @@ console.log( nArabicWords(2,{AG:"on"}) );          // "اثنين"
 console.log( nArabicWords(12) );                   // "اثنا عشر"
 console.log( nArabicWords(12,{AG:"on"}) );         // "اثني عشر"
 
-console.log( nArabicWords((122) );                 // "مائة واثنان وعشرون"
-console.log( nArabicWords((122,{AG:"on"}) );       // "مائة واثنين وعشرين"
+console.log( nArabicWords(122) );                  // "مائة واثنان وعشرون"
+console.log( nArabicWords(122,{AG:"on"}) );        // "مائة واثنين وعشرين"
 
 console.log( nArabicWords(2452452000) );           // "ملياران وأربعمائة واثنان وخمسون مليونًا وأربعمائة واثنان وخمسون ألفًا"
 console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربعمائة واثنين وخمسين مليونًا وأربعمائة واثنين وخمسين ألفًا"
@@ -349,8 +347,8 @@ This option permits such situations of ambiguity to be avoided.
 The above examples cab ne re-done with the option **{Legal: "on"}**:
 
 ```javascript
-console.log( nArabicWords(101,000, {Legal:"on"}) );   // "مائة ألف وألف"
-console.log( nArabicWords(102,010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
+console.log( nArabicWords(101000, {Legal:"on"}) );   // "مائة ألف وألف"
+console.log( nArabicWords(102010, {Legal:"on"}) );   // "مائةألف وألفان وعشرة"
 ```
 
 As additional protection against any ambiguity, it is advisable to enable the option **{Comma: "on"}** to clearly indicate the separation between triplets.
@@ -387,7 +385,7 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 3. With the feature and option using **{Subject [array]}**, a simple wrapper function can be added to create a tool for converting currency numbers to the equivalent Arabic text.
 
-## 8. NUmber to Arabic Words Summary Table
+## 8. NUmber to Arabic Words Translation Table
 
 The following table lists the numbers to Arabic words basic rules.
 
