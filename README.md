@@ -261,20 +261,22 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 
 ### 4.8 Option {Subject : [array]}
 
-This option permits the "subject" name to be counted to be passed as an array in the four (4) textual grammar forms. The output text is produced using text that contains the proper subject name selected for the number.
+This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms. The output text is produced using text that contains the proper subject name appropriately selected for the number in question.
 
-Not only does this ensure that the correct subject/number text is properly associated but will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
+Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
 
 The array holding the subject name shall be in the following form:
 
-[0] = Name **Singular**
+Array elements [0] = Name **Singular**
 
-[1] = Name for 2's (**double**)
+Array elements [1] = Name for 2's (**double**)
 
-[2] = Name for **Plural**
+Array elements [2] = Name for **Plural**
 
-[3] = Name **Singular Tanween**
+Array elements [3] = Name **Singular Tanween**
 
+
+Examples of arrays:
 
 | Array Element| Usage |Example 1|Example 2|Example 3|Example 4|Example 5|Example 6
 |:---:|:---|:-----|:-----|:-----|:-----|:-----|:-----
@@ -307,9 +309,9 @@ console.log( nArabicWords(350, {Subject:Students}) );  // "ثلاثمائة وخ
 
 As can be seen from the above example, the appropriate form of the subject name is selected and inserted in the number in accordance with Arabic grammar.
 
-Of course, if the subject is "feminine", you will also need to enable the "Feminine" Option.
+Of course, if the subject is "feminine", you will also need to enable the "Feminine" Option **{Feminine:"on"}**.
 
-An example for a feminine subject name:
+An example for a feminine subject name (the currency "Lira"):
 
 ```javascript
 let Money = ["ليرة",
@@ -317,12 +319,12 @@ let Money = ["ليرة",
              "ليرات",
              "ليرةً"];
                
-console.log( nArabicWords(1,  {Subject:Students, Feminine:"on"}) );    // "ليرة واحدة"
-console.log( nArabicWords(2,  {Subject:Students, Feminine:"on"}) );    // "ليرتان اثنتان"
-console.log( nArabicWords(3,  {Subject:Students, Feminine:"on"}) );    // "ثلاثة ليرات"
-console.log( nArabicWords(10,  {Subject:Students, Feminine:"on"}) );   // "عشر ليرات"
-console.log( nArabicWords(21,  {Subject:Students, Feminine:"on"}) );   // "واحد وعشرون ليرةً"
-console.log( nArabicWords(350, {Subject:Students, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
+console.log( nArabicWords(1,  {Subject:Money, Feminine:"on"}) );    // "ليرة واحدة"
+console.log( nArabicWords(2,  {Subject:Money, Feminine:"on"}) );    // "ليرتان اثنتان"
+console.log( nArabicWords(3,  {Subject:Money, Feminine:"on"}) );    // "ثلاثة ليرات"
+console.log( nArabicWords(10,  {Subject:Money, Feminine:"on"}) );   // "عشر ليرات"
+console.log( nArabicWords(21,  {Subject:Money, Feminine:"on"}) );   // "واحد وعشرون ليرةً"
+console.log( nArabicWords(350, {Subject:Money, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
 ```
 
 ### 4.9 Option {Legal : "on"}
