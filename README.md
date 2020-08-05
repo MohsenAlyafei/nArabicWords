@@ -32,7 +32,7 @@ The purpose was therefore to produce a **standalone javascript utility function*
 Large numbers may be passed in a string form if required.
 Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩) (as a string), if required.
 
-**options**: Options passed as object {name:value}. See below summary table and detailed explanation of each option.
+**options**: Options are passed as object {name:value}. See below summary table and detailed explanation of each option.
 
 ### Return Value:
 
@@ -66,7 +66,7 @@ Output:
 مائتان وثلاثة وثلاثون سكستليونًا
 ```
 
-*As can be seen from the above, the default output is using the Nominative grammar case (حالة الرفع).*
+*As can be seen from the above, the **default** output uses the Nominative grammar case (حالة الرفع).*
 
 ## 3. Defaults Values
 
@@ -119,7 +119,7 @@ console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإ�
 
 ### 4.2 Option {Miah : "on"}
 
-This option permits the word "مائة" to be changed to "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
+With this option, the default word "مائة" (for hundreds) is replaced with "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
 
 This option affects all places where the word Hundred is used.
 
@@ -143,6 +143,8 @@ console.log( nArabicWords(350,{Miah:"on"}) ); // "ثلاثمئة وخمسون"
 This option permits the splitting/separation of the unit name from the hundred words.
 
 Some Arabic-speaking countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
+
+When combined with the options `{Miah: "on"}`, this option produces the combined result of (for example) "ثلاث مئة" and "أربع مئة".
 
 Examples with both the default and with the option **{SplitHund: "on"}**:
 
@@ -232,11 +234,11 @@ Consider the following example:
 
 The number 2000 will normally be converted to "ألفان". This is the correct output for a standalone text.
 
-However, if you we want to write "2000 books". You cannot simply say "ألفان كتاب". This is incorrect Arabic.
+However, if we want to write the sentence "2000 books" (Arabic: "ألفا كتاب". You cannot simply say "ألفان كتاب". This is incorrect Arabic.
 
 The output should be "**ألفا كتاب**".
 
-Another example: 20,000 Dollars should be written as "**عشرون ألف دولار**" and not "عشرون ألفًا دولار".
+Another example: The sentence "20,000 Dollars" should be written as "**عشرون ألف دولار**" and not "عشرون ألفًا دولار".
 
 This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
@@ -261,7 +263,7 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 
 ### 4.8 Option {Subject : [array]}
 
-This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms. The output text is produced using text that contains the proper subject name appropriately selected for the number in question.
+This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms (for the singular, duo, plural, and tanween). The function picks up the correct form of subject name for the number and the output text is produced using text that contains the proper subject name appropriately selected for the number in question.
 
 Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
 
@@ -392,4 +394,5 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 The following table lists the numbers to Arabic words basic rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
+
 
