@@ -1,3 +1,5 @@
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/hjuwxi6ffq07a674btmq.png)
+
 ## 1. Description
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
