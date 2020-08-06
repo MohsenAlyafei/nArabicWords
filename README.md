@@ -1,27 +1,17 @@
 ![page logo](https://dev-to-uploads.s3.amazonaws.com/i/hjuwxi6ffq07a674btmq.png)
 
 ### **Table Of Contents**
-
 [1. Introduction](#introduction)
-
 [2. Syntax and Parameters](#syntax)
-
 [3. Examples of General Use](#general)
-
 [4. Default Values](#defaults)
-
 [5. Option Settings](#options)
-
 [6. Increasing the Scale](#scales)
-
 [7. Using Arabic-Indic Numbers](indic)
-
 [8. General Notes on Code](#notes)
-
 [9. Number to Arabic Words Translation Table](#table)
 
-
-### **1. Introduction** <a name="introduction"></a>
+### **1️⃣ Introduction** <a name="introduction"></a>
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
 
@@ -43,7 +33,7 @@ The purpose was therefore to produce a **standalone javascript utility function*
 - Provides features as options with the defaults being the most accepted forms of standards for simple use and call of the function.
 - Provide the ability to produce output in a legally unambiguous form.
 
-### **2. Syntax and Parameters** <a name="syntax"></a>
+### **2️⃣ Syntax and Parameters** <a name="syntax"></a>
 
 ### Syntax:
 ```javascript
@@ -62,7 +52,9 @@ Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩)
 An Arabic text string of the converted number.
 
 
-### 3. **Examples of General Use** <a name="general"></a>
+
+
+### **3️⃣ Examples of General Use** <a name="general"></a>
 
 In it s basic form, the function can simply be invoked for an integer number by passing only the first parameter; as follows:
 
@@ -91,7 +83,10 @@ Output:
 
 *As can be seen from the above, the **default** output uses the Nominative grammar case (حالة الرفع).*
 
-### **4. Defaults Values** <a name="defaults"></a>
+
+
+
+### **4️⃣. Defaults Values** <a name="defaults"></a>
 
 The function uses the following common grammar rules as its defaults:
 
@@ -104,11 +99,14 @@ The function uses the following common grammar rules as its defaults:
 
 All of the above defaults (and more) may be changed with the option settings (see below).
 
-### **5. Option Settings** <a name="options"></a>
+
+
+
+### **5️⃣ Option Settings** <a name="options"></a>
 
 ### Summary Options Table
 
-| No.| Option |Default|Purpose
+| No.| Option |Default|Purpose  
 |:---:|:---|:---:|:-----
 |1|[Feminine](#feminine)|off| Produce output text for a feminine subject. Default is masculine.
 |2|[Miah](#miah)|off| Selects between "مئة" (off) and "مائة" (on) style. Default is "مائة".
@@ -120,7 +118,10 @@ All of the above defaults (and more) may be changed with the option settings (se
 |8|[Subject](#subject)|off| Produce output text including the subject name. The Subject name is passed as an array holding the 4 textual forms. The correct form and text are then used for the type of number.
 |9|[Legal](#legal)          |off| Output in a legal non-ambiguous form.
 
-### 5.1 Option \{Feminine : "on"\} <a name="feminine"></a>
+
+
+
+#### **⚙ Option `{Feminine : "on"}`** <a name="feminine"></a>
 
 If the "subject" to be counted is "feminine" then use this option to produce the grammatically correct result.
 
@@ -140,7 +141,9 @@ console.log( nArabicWords(200011) );                 // "مائتا ألف وأ�
 console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإحدى عشرة"
 ```
 
-### 5.2 Option {Miah : "on"}<a name="miah"></a>
+
+
+#### **⚙ Option `{Miah : "on"}`**<a name="miah"></a>
 
 With this option, the default word "مائة" (for hundreds) is replaced with "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
 
@@ -161,7 +164,9 @@ console.log( nArabicWords(350) );             // "ثلاثمائة وخمسون"
 console.log( nArabicWords(350,{Miah:"on"}) ); // "ثلاثمئة وخمسون"
 ```
 
-### 5.3 Option {SplitHund : "on"} <a name="splithund"></a>
+
+
+#### **⚙ Option `{SplitHund : "on"}`** <a name="splithund"></a>
 
 This option permits the splitting/separation of the unit name from the hundred words.
 
@@ -185,7 +190,9 @@ console.log( nArabicWords(2700) );                   // "ألفان وسبعما
 console.log( nArabicWords(2700, {SplitHund:"on"}) ); // "ألفان وسبع مائة"
 ```
 
-### 5.4 Option {Comma : "on"}<a name="comma"></a>
+
+
+#### **⚙ Option `{Comma : "on"}`**<a name="comma"></a>
 
 This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
 
@@ -202,7 +209,8 @@ console.log( nArabicWords(100100100 ,{Comma:"on"}) ); // "مائة مليون، 
 ```
 
 
-### 5.5 Option {Billions : "on"}<a name="billions"></a>
+
+#### **⚙ Option `{Billions : "on"}`**<a name="billions"></a>
 
 This option permits the use of the pure (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
 
@@ -224,7 +232,10 @@ console.log( nArabicWords(255000000000) );                 // "مائتان وخ
 console.log( nArabicWords(255000000000,{Billions:"on"}) ); // "مائتان وخمسة وخمسون بليونًا"
 ```
 
-### 5.6 Option {AG : "on"}<a name="ag"></a>
+
+
+
+#### **⚙ Option `{AG : "on"}`**<a name="ag"></a>
 
 When using this option, the output text is produced in the Accusative/Genitive (جر/نصب) case. The default being the Nominative case (رفع).
 
@@ -249,7 +260,10 @@ console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربع
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n3ep5yopgswhx6wirhyj.png)
 
 
-### 5.7 Option {TextToFollow : "on"}<a name="texttofollow"></a>
+
+
+
+#### **⚙ Option `{TextToFollow : "on"}`**<a name="texttofollow"></a>
 
 The output text assumes by default that there will be no text is added or to follow the converted number text. Therefore, the output text may not be suitable for adding inside a sentence or to be concatenated to a follow-on text.
 
@@ -284,31 +298,33 @@ console.log( nArabicWords(20000 ,{TextToFollow:"on"}) +"دولار" );   // Corr
 ```
 
 
-### 5.8 Option {Subject : [array]}<a name="subject"></a>
+
+
+#### **⚙ Option `{Subject : [array]}`**<a name="subject"></a>
 
 This option permits the name of the "subject" that is to be counted to be passed as an array in its four (4) textual grammar forms (for the singular, duo, plural, and tanween). The function picks up the correct form of subject name for the number and the output text is produced using text that contains the proper subject name appropriately selected for the number in question.
 
-Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's.
+Not only does this ensure that the correct subject/number text is properly associated but it will also ensure that the subject name and the number text are appropriately reversed for numbers containing 1's and 2's. 
 
 The array holding the subject name shall be in the following form:
 
 Array elements [0] = Subject Name **Singular**
 
-Array elements [1] = Subject Name for 2's (**double**)
+Array elements [1] = Subject  Name for 2's (**double**)
 
-Array elements [2] = Subject Name for **Plural**
+Array elements [2] = Subject  Name for **Plural**
 
-Array elements [3] = Subject Name **Singular Tanween**
+Array elements [3] = Subject  Name **Singular Tanween**
 
 
 Examples of arrays:
 
 | Array Element| Usage |Example 1|Example 2|Example 3|Example 4|Example 5|Example 6
 |:---:|:---|:-----|:-----|:-----|:-----|:-----|:-----
-|[0]|Name **Singular**       |دينار|تفاحة|كتاب|طالب|بنت|ليرة
-|[1]|Name for 2's (**double**)(\*)  |ديناران|تفاحتان|كتابان|طالبان|بنتان|ليرتان
-|[2]|Name for **Plural**      |دنانير|تفاحات|كتب|طلاب|بنات|ليرات
-|[3]|Name **Singular Tanween**      |دينارًا|تفاحةً|كتابًا|طالبًا|بنتًا|ليرةً
+|[0]|Name **Singular**       |دينار|تفاحة|كتاب|طالب|بنت|ليرة 
+|[1]|Name for 2's (**double**)(\*)  |ديناران|تفاحتان|كتابان|طالبان|بنتان|ليرتان 
+|[2]|Name for **Plural**      |دنانير|تفاحات|كتب|طلاب|بنات|ليرات 
+|[3]|Name **Singular Tanween**      |دينارًا|تفاحةً|كتابًا|طالبًا|بنتًا|ليرةً 
 
 The subject name will be added to the resulting string in accordance with the grammar rules that apply to the specific number.
 
@@ -323,7 +339,7 @@ let Students = ["طالب",
                 "طالبان",
                 "طلاب",
                 "طالبًا"];
-
+               
 console.log( nArabicWords(1, {Subject:Students}) );    // "طالب واحد"
 console.log( nArabicWords(2, {Subject:Students}) );    // "طالبان اثنان"
 console.log( nArabicWords(3, {Subject:Students}) );    // "ثلاثة طلاب"
@@ -343,7 +359,7 @@ let Money = ["ليرة",
              "ليرتان",
              "ليرات",
              "ليرةً"];
-
+               
 console.log( nArabicWords(1,  {Subject:Money, Feminine:"on"}) );    // "ليرة واحدة"
 console.log( nArabicWords(2,  {Subject:Money, Feminine:"on"}) );    // "ليرتان اثنتان"
 console.log( nArabicWords(3,  {Subject:Money, Feminine:"on"}) );    // "ثلاثة ليرات"
@@ -352,7 +368,10 @@ console.log( nArabicWords(21,  {Subject:Money, Feminine:"on"}) );   // "واحد
 console.log( nArabicWords(350, {Subject:Money, Feminine:"on"}) );   // "ثلاثمائة وخمسون ليرةً"
 ```
 
-### 5.9 Option {Legal : "on"}<a name="legal"></a>
+
+
+
+#### **⚙ Option `{Legal : "on"}`**<a name="legal"></a>
 
 The output text is produced in a legal non-ambiguous form.
 
@@ -381,7 +400,9 @@ console.log( nArabicWords(102010, {Legal:"on"}) );   // "مائةألف وألف
 As additional protection against any ambiguity, it is advisable to enable the option **{Comma: "on"}** to clearly indicate the separation between triplets.
 
 
-### **6. Increasing the Scale** <a name="scales"></a>
+
+
+### **6️⃣ Increasing the Scale** <a name="scales"></a>
 
 The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
 
@@ -393,7 +414,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
 
 ```
 
-### **7. Using Arabic-Indic Numbers** <a name="indic"></a>
+### **7️⃣ Using Arabic-Indic Numbers** <a name="indic"></a>
 
 Arabic-Indic Numbers can be used instead of Arabic numbers if needed. In fact, a mix of Arabic and Arabic-Indic numbers is permitted.
 
@@ -404,7 +425,7 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 ```
 
 
-### **8. General Notes on Code** <a name="notes"></a>
+### **8️⃣ General Notes on Code** <a name="notes"></a>
 
 1. Purposely, the function code is made short and heavily commented (see description above for reasons). Most of the code had been added to cater for the various options.
 
@@ -412,7 +433,10 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 3. With the feature and option using **{Subject [array]}**, a simple wrapper function can be added to create a tool for converting currency numbers to the equivalent Arabic text.
 
-### **9. Number to Arabic Words Translation Table** <a name="table"></a>
+
+
+
+### **9️⃣ Number to Arabic Words Translation Table** <a name="table"></a>
 
 The following table lists the numbers to Arabic words basic rules.
 
