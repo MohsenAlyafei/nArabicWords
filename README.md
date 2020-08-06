@@ -1,4 +1,4 @@
-![page logo](https://dev-to-uploads.s3.amazonaws.com/i/hjuwxi6ffq07a674btmq.png)
+![page logo](https://dev-to-uploads.s3.amazonaws.com/i/k1ny40s93sugegvcngam.png)
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
