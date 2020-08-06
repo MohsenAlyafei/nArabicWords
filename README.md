@@ -86,7 +86,7 @@ Output:
 
 
 
-### **4️⃣. Defaults Values** <a name="defaults"></a>
+### **4️⃣ Defaults Values** <a name="defaults"></a>
 
 The function uses the following common grammar rules as its defaults:
 
@@ -308,13 +308,13 @@ Not only does this ensure that the correct subject/number text is properly assoc
 
 The array holding the subject name shall be in the following form:
 
-Array elements [0] = Subject Name **Singular**
+Array element **[0]** = Subject Name **Singular**
 
-Array elements [1] = Subject  Name for 2's (**double**)
+Array element **[1]** = Subject Name for 2's (**double**)
 
-Array elements [2] = Subject  Name for **Plural**
+Array element **[2]** = Subject Name for **Plural**
 
-Array elements [3] = Subject  Name **Singular Tanween**
+Array element **[3]** = Subject Name **Singular Tanween**
 
 
 Examples of arrays:
@@ -404,9 +404,9 @@ As additional protection against any ambiguity, it is advisable to enable the op
 
 ### **6️⃣ Increasing the Scale** <a name="scales"></a>
 
-The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements of the first array `const TableScales`.
+The Scale can be increased beyond Sextillion (سكستليون) by adding additional elements to the first array `const TableScales =[]`.
 
-Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code.
+Do not change the array for *Plurals* (the constant variable `TableScalesP`) as the conversion of Scale Names to plurals is taken care of by the code itself.
 
 For example to increase the Scale to Quattuordecillion (كواتوردسليون) (i.e. 10^45):
 ```javascript
