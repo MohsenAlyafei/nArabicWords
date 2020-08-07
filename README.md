@@ -1,4 +1,12 @@
-![page logo](https://dev-to-uploads.s3.amazonaws.com/i/iudocjlq240ggjj3j7au.png)
+![GitHub](https://img.shields.io/github/license/MohsenAlyafei/nArabicWords?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/MohsenAlyafei/nArabicWords)
+![npm](https://img.shields.io/npm/v/narabicwords?color=g&style=plastic)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/narabicwords?label=npm%20size)
+![npm](https://img.shields.io/npm/dw/narabicwords?label=npm%20downloads)
+![Twitter Follow](https://img.shields.io/twitter/follow/maalyafei?label=FollowMe%20MohsenAlyafei&style=social)
+
+![page logo](https://dev-to-uploads.s3.amazonaws.com/i/pzcj5q63hknl09prbilh.png)
+
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
@@ -441,4 +449,8 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 The following table lists the numbers to Arabic words basic rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
+
+
+
+
 
