@@ -30,14 +30,14 @@ The majority of websites providing such facilities generally produce inaccurate 
 
 While Arabic grammar rules for pronouncing and writing numbers may be difficult to remember; they are nevertheless consistent and precise for hundreds of years; with only very minor modern variances.
 
-The purpose was therefore to produce a **standalone javascript utility function** that includes the ability to correctly produce and handle the following:
+The purpose was therefore to produce a **standalone javascript utility function** that provides the ability to correctly produce and handle the following:
 
 - Grammatically correct Arabic text for integer numbers from 0 up to 10^21 and more.
-- Gender-Sensitive Subjects (Masculine and Feminine).
+- Gender-Sensitive Subjects (Masculine and Feminine (مذكر ومؤنث)).
 - Nominative, Accusative, and Genitive Arabic grammar cases (رفع، جر، ونصب).
 - Correct positioning of subject names for ones and twos.
 - The facility to include the subject name to be counted in the output text; correctly positioned for the appropriate number.
-- Address and cover the different forms and standards of writing numbers in words as used in the different Arabic speaking countries.
+- Address and cover the different forms and standards of writing numbers in words as used in the different Arabic-speaking countries.
 - Be self-contained and not rely on any external dependencies (other libraries).
 - Use Vanilla JavaScript code only (ES6).
 - Be sufficiently short and simple so that it can (if needed) be simply copied and pasted in one's own code for immediate use.
@@ -67,7 +67,7 @@ An Arabic text string of the converted number.
 
 ### **3️⃣ Examples of General Use** <a name="general"></a>
 
-In it s basic form, the function can simply be invoked for an integer number by passing only the first parameter; as follows:
+In it's basic form, the function can simply be invoked for an integer number by passing only the first parameter; as follows:
 
 ```javascript
 console.log( nArabicWords(2000) );     // "ألفان"
@@ -85,7 +85,7 @@ Output:
 If the number is too large to be handled by the system/javascript, place the number in quotes, for example:
 
 ```javascript
-console.log(nArabicWords( "233000000000000000000000") ); // مائتان وثلاثة وثلاثون سكستليونًا
+console.log( nArabicWords("233000000000000000000000") ); // مائتان وثلاثة وثلاثون سكستليونًا
 ```
 Output:
 ```javascript
@@ -97,7 +97,7 @@ Output:
 
 
 
-### **4️⃣ Defaults Values** <a name="defaults"></a>
+### **4️⃣ Default Values** <a name="defaults"></a>
 
 The function uses the following common grammar rules as its defaults:
 
@@ -471,8 +471,8 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 The following table provides a summary of the numbers to Arabic words basic conversion rules.
 
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/5rdg9hmtrkxg3m3rxe8e.png)
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
 
 
 
