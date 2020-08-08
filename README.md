@@ -7,8 +7,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/narabicwords/0.0.22/badge.svg)](https://snyk.io/test/npm/narabicwords/0.0.22)
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/maalyafei?style=social)
-
-![page logo](https://dev-to-uploads.s3.amazonaws.com/i/jqg6e7ot7vuocbb980u8.png)
+![page logo](https://dev-to-uploads.s3.amazonaws.com/i/m2f1bxvzsugb0xn8a0ya.png)
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
@@ -468,4 +467,7 @@ The following table provides a summary of the numbers to Arabic words basic conv
 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
+
+
+
 
