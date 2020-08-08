@@ -4,6 +4,8 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/narabicwords?label=npm%20size)
 ![npm](https://img.shields.io/npm/dw/narabicwords?label=npm%20downloads)
 [![](https://data.jsdelivr.com/v1/package/npm/narabicwords/badge)](https://www.jsdelivr.com/package/npm/narabicwords)
+[![Known Vulnerabilities](https://snyk.io/test/npm/narabicwords/0.0.22/badge.svg)](https://snyk.io/test/npm/narabicwords/0.0.22)
+
 ![Twitter Follow](https://img.shields.io/twitter/follow/maalyafei?label=FollowMe%20MohsenAlyafei&style=social)
 
 ![page logo](https://dev-to-uploads.s3.amazonaws.com/i/pzcj5q63hknl09prbilh.png)
