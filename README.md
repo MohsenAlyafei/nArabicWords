@@ -7,6 +7,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/narabicwords/0.0.22/badge.svg)](https://snyk.io/test/npm/narabicwords/0.0.22)
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/maalyafei?style=social)
+
+
 ![page logo](https://dev-to-uploads.s3.amazonaws.com/i/m2f1bxvzsugb0xn8a0ya.png)
 
 ### **Table Of Contents**
@@ -183,7 +185,7 @@ Some Arabic-speaking countries consider this to be the correct method for writin
 
 When combined with the options `{Miah: "on"}`, this option produces the combined result of (for example) "ثلاث مئة" and "أربع مئة".
 
-The flowing diagram illustrates the option:
+The flowing diagram illustrates the effect of this option:
 
 ![Split undred Image](https://dev-to-uploads.s3.amazonaws.com/i/85g9713rnssfiorpj6uz.png)
 
@@ -207,7 +209,7 @@ console.log( nArabicWords(2700, {SplitHund:"on"}) ); // "ألفان وسبع م�
 
 #### **⚙ Option `{Comma : "on"}`**<a name="comma"></a>
 
-This option adds a comma "،" between the triplet number strings. This may assist in having a more readable and accurate text, especially for large numbers.
+This option adds a comma "،" between the triplet number strings. This assists in having a more readable and better-interpreted text, especially for large numbers.
 
 Examples with both the default and with the option **{Comma: "on"}**:
 
@@ -225,7 +227,11 @@ console.log( nArabicWords(100100100 ,{Comma:"on"}) ); // "مائة مليون، 
 
 #### **⚙ Option `{Billions : "on"}`**<a name="billions"></a>
 
-This option permits the use of the pure (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
+This option permits the use of the (official) Short Scale Numbering System (using Billions) (UK/USA system) rather than the Arabic Short Scale System. It is to be noted that the *Arabic Short Scale System* **is an exact Short Scale System** except that the word Billion (بليون) at position 10^9 is replaced with the word milyar (مليار) (all other scale names remain unchanged). Most Arabic-language countries and regions use the short scale with 10^9 being مليار (milyar), except for a few countries like Saudi Arabia and the UAE which use the word بليون billion for 10^9. More information on countries using the system can be found here on Wikipedia: [Arabic_Speaking_Long_and_Short_Scales](https://en.wikipedia.org/wiki/Long_and_short_scales#Arabic-speaking).
+
+The following diagram illustrates the difference between the two systems:
+
+![Arabic Short Scale](https://dev-to-uploads.s3.amazonaws.com/i/jsx9dc5e2ug9xbqhxt9y.png)
 
 Examples with both the default and with the option **{Billions: "on"}**:
 
@@ -467,7 +473,6 @@ The following table provides a summary of the numbers to Arabic words basic conv
 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
-
 
 
 
