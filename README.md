@@ -8,29 +8,18 @@
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/maalyafei?label=FollowMe%20MohsenAlyafei&style=social)
 
-![page logo](https://dev-to-uploads.s3.amazonaws.com/i/pzcj5q63hknl09prbilh.png)
-
-
+![page logo](https://dev-to-uploads.s3.amazonaws.com/i/jqg6e7ot7vuocbb980u8.png)
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
-
 [2. Syntax and Parameters](#syntax)
-
 [3. Examples of General Use](#general)
-
 [4. Default Values](#defaults)
-
 [5. Option Settings](#options)
-
 [6. Increasing the Scale](#scales)
-
 [7. Using Arabic-Indic Numbers](indic)
-
 [8. General Notes on Code](#notes)
-
 [9. Number to Arabic Words Translation Table](#table)
-
 
 ### **1️⃣ Introduction** <a name="introduction"></a>
 
@@ -461,6 +450,8 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 ![Table 01](https://dev-to-uploads.s3.amazonaws.com/i/5lnzskpqrr4qv06c49ax.png)
 
+![Table 01](https://dev-to-uploads.s3.amazonaws.com/i/5lnzskpqrr4qv06c49ax.png)
+
 ![Table_02](https://dev-to-uploads.s3.amazonaws.com/i/xkrmkzbgs90a4g0ioau7.png)
 
 ![Table_03](https://dev-to-uploads.s3.amazonaws.com/i/bfrb974qaz34ixj90yjv.png)
@@ -470,6 +461,14 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 ![Table_05](https://dev-to-uploads.s3.amazonaws.com/i/zbaq1fh3rmcfobaw1cxt.png)
 
 The following table provides a summary of the numbers to Arabic words basic conversion rules.
+
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
+
+
+{% github MohsenAlyafei/nArabicWords%}
+
+
 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
