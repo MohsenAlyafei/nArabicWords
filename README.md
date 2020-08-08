@@ -157,10 +157,6 @@ console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإ�
 
 With this option, the default word "مائة" (for hundreds) is replaced with "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
 
-The flowing diagram illustrates the option:
-
-![Split undred Image](https://dev-to-uploads.s3.amazonaws.com/i/85g9713rnssfiorpj6uz.png)
-
 This option affects all places where the word Hundred is used.
 
 Examples with both the default and with the option **{Miah: "on"}**:
@@ -187,6 +183,10 @@ This option permits the splitting/separation of the unit name from the hundred w
 Some Arabic-speaking countries consider this to be the correct method for writing the numbers from 300 to 900. The "ثلاثمائة" becomes "ثلاث مائة" and "أربعمائة" becomes "أربع مائة", and so on.
 
 When combined with the options `{Miah: "on"}`, this option produces the combined result of (for example) "ثلاث مئة" and "أربع مئة".
+
+The flowing diagram illustrates the option:
+
+![Split undred Image](https://dev-to-uploads.s3.amazonaws.com/i/85g9713rnssfiorpj6uz.png)
 
 Examples with both the default and with the option **{SplitHund: "on"}**:
 
