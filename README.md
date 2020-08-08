@@ -267,7 +267,7 @@ console.log( nArabicWords(2452452000,{AG:"on"}) ); // "مليارين وأربع
 
 - The following table summarizes the conditions under which numbers are converted from Nominative to Accusative/Genitive.
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/n3ep5yopgswhx6wirhyj.png)
+![AG_Affected](https://dev-to-uploads.s3.amazonaws.com/i/84n9iyyjr0t5p1ra5e2b.png)
 
 
 
@@ -464,3 +464,5 @@ The following table provides a summary of the numbers to Arabic words basic conv
 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
+
+
