@@ -1,10 +1,11 @@
 {
   "name": "narabicwords",
-  "version": "0.0.16",
+  "version": "0.0.23",
   "description": "A JavaScript Arabic numbers to words tool.",
-  "main": "index.js",
-  "unpkg": "index.js",
+  "main": "nArabicWords.js",
+  "unpkg": "nArabicWords.js",
   "license": "MIT",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MohsenAlyafei/nArabicWords.git"
