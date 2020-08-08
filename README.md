@@ -14,14 +14,23 @@
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
+
 [2. Syntax and Parameters](#syntax)
+
 [3. Examples of General Use](#general)
+
 [4. Default Values](#defaults)
+
 [5. Option Settings](#options)
+
 [6. Increasing the Scale](#scales)
+
 [7. Using Arabic-Indic Numbers](indic)
+
 [8. General Notes on Code](#notes)
+
 [9. Number to Arabic Words Translation Table](#table)
+
 
 ### **1️⃣ Introduction** <a name="introduction"></a>
 
