@@ -157,6 +157,10 @@ console.log( nArabicWords(200011,{Feminine:"on"}) ); // "مائتا ألف وإ�
 
 With this option, the default word "مائة" (for hundreds) is replaced with "مئة". Many Arabic-speaking countries' official documents prefer the use of the word "مئة".
 
+The flowing diagram illustrates the option:
+
+![Split undred Image](https://dev-to-uploads.s3.amazonaws.com/i/85g9713rnssfiorpj6uz.png)
+
 This option affects all places where the word Hundred is used.
 
 Examples with both the default and with the option **{Miah: "on"}**:
@@ -464,5 +468,4 @@ The following table provides a summary of the numbers to Arabic words basic conv
 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/pls2unvshrtjhnpb12z2.png)
-
 
