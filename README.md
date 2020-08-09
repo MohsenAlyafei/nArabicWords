@@ -28,18 +28,19 @@
 
 [8. General Notes on Code](#notes)
 
-
 [9. Number to Arabic Words Translation Table](#table)
 
 ### **1️⃣ Introduction** <a name="introduction"></a>
 
 The intention of the exercise was to provide a **general-purpose** function that is simple yet accurate for converting Numbers (Integers) to Arabic Words in compliance with (*and with options for*) the Arabic grammar rules/settings.
 
-The majority of websites providing such facilities generally produce inaccurate and/or grammatically inaccurate outputs.
+The function must not be tied to a particular subject count (such as limited to currencies, etc.) and must handle (through options) all types of subjects that are to be counted using all forms of Arabic grammar.
 
-While Arabic grammar rules for pronouncing and writing numbers may be difficult to remember; they are nevertheless consistent and precise for hundreds of years; with only very minor modern variances.
+Sadly, the majority of websites providing such facilities generally produce inaccurate and/or grammatically inaccurate outputs that cannot be reliably and confidently used for any official purposes.
 
-The purpose was therefore to produce a **standalone javascript utility function** that provides the ability to correctly produce and handle the following:
+While Arabic grammar rules for pronouncing and writing numbers may be difficult to remember; they are nevertheless consistent and precise for the many hundreds of years; with only very minor modern variances.
+
+The purpose was therefore to produce a **standalone general-purpose javascript utility function** that provides the ability to correctly produce and handle the following:
 
 - Grammatically correct Arabic text for integer numbers from 0 up to 10^21 and more.
 - Gender-Sensitive Subjects (Masculine and Feminine (مذكر ومؤنث)).
@@ -70,6 +71,7 @@ Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩)
 ### Return Value:
 
 An Arabic text string of the converted number.
+
 
 
 
@@ -481,8 +483,5 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 The following table provides a summary of the numbers to Arabic words basic conversion rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/5rdg9hmtrkxg3m3rxe8e.png)
-
-
-
 
 
