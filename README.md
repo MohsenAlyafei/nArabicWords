@@ -70,7 +70,7 @@ Numbers may be passed in Arabic-Indic format (i.e. numbers ٠١٢٣٤٥٦٧٨٩)
 
 ### Return Value:
 
-An Arabic text string of the converted number.
+An Arabic text string representation of the number.
 
 
 
