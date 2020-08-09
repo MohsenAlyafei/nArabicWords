@@ -13,21 +13,13 @@
 
 ### **Table Of Contents**
 [1. Introduction](#introduction)
-
 [2. Syntax and Parameters](#syntax)
-
 [3. Examples of General Use](#general)
-
 [4. Default Values](#defaults)
-
 [5. Option Settings](#options)
-
 [6. Increasing the Scale](#scales)
-
 [7. Using Arabic-Indic Numbers](indic)
-
 [8. General Notes on Code](#notes)
-
 [9. Number to Arabic Words Translation Table](#table)
 
 ### **1️⃣ Introduction** <a name="introduction"></a>
@@ -465,21 +457,22 @@ console.log( nArabicWords("٢٤٥٢٤٥٢٠٠٠") ); // out: "ملياران و�
 
 ### **9️⃣ Number to Arabic Words Translation Tables** <a name="table"></a>
 
-![Table 01](https://dev-to-uploads.s3.amazonaws.com/i/5lnzskpqrr4qv06c49ax.png)
+![Table 01](https://dev-to-uploads.s3.amazonaws.com/i/8nwxqperlxsj3zp5cig8.png)
 
-![Table 01](https://dev-to-uploads.s3.amazonaws.com/i/5lnzskpqrr4qv06c49ax.png)
+![Table 02](https://dev-to-uploads.s3.amazonaws.com/i/9p0kt6n4u7phof7obupv.png)
 
-![Table_02](https://dev-to-uploads.s3.amazonaws.com/i/xkrmkzbgs90a4g0ioau7.png)
+![Table 03](https://dev-to-uploads.s3.amazonaws.com/i/6d48h2w6nmkrfhk4hbhx.png)
 
-![Table_03](https://dev-to-uploads.s3.amazonaws.com/i/bfrb974qaz34ixj90yjv.png)
+![Tabel 04](https://dev-to-uploads.s3.amazonaws.com/i/51rwqqxpymzlgr1zuxm2.png)
 
-![Table_04](https://dev-to-uploads.s3.amazonaws.com/i/oaunodhnhgwxfea8uyc5.png)
+![Tabel 05](https://dev-to-uploads.s3.amazonaws.com/i/wxzzb5odmel6o0f3j0dm.png)
 
-![Table_05](https://dev-to-uploads.s3.amazonaws.com/i/zbaq1fh3rmcfobaw1cxt.png)
+![Table 06](https://dev-to-uploads.s3.amazonaws.com/i/etqxmc62oasp4mtimar6.png)
 
 The following table provides a summary of the numbers to Arabic words basic conversion rules.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/5rdg9hmtrkxg3m3rxe8e.png)
+
 
 
 
