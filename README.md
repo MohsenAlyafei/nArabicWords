@@ -11,7 +11,7 @@
 
 ![page logo](https://dev-to-uploads.s3.amazonaws.com/i/m2f1bxvzsugb0xn8a0ya.png)
 
-### **Table Of Contents**
+### **Table of Contents**
 [1. Introduction](#introduction)
 
 [2. Syntax and Parameters](#syntax)
