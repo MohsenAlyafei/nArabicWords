@@ -37,7 +37,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
       TableMale   =["","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة"],
       TableFemale =["","واحدة","اثنتان","ثلاث","أربع","خمس","ست","سبع","ثمان","تسع","عشر"];
 
-function nArabicWords(NumIn=0,{Feminine,Comma,SplitHund,Miah,Billions,TextToFollow,AG,Subject,Legal}={}) {
+export function nArabicWords(NumIn=0,{Feminine,Comma,SplitHund,Miah,Billions,TextToFollow,AG,Subject,Legal}={}) {
 if (NumIn == 0) return "صفر";                          // if 0 or "0" then "zero"
 let Triplet, Scale, ScalePos, ScalePlural, TableUnits, Table11_19,NumberInWords= "",IsLastEffTriplet= false,Num_99;
 const ON= "on",                         // Flag to test if Option is ON
