@@ -1,6 +1,6 @@
 {
   "name": "narabicwords",
-  "version": "0.0.24",
+  "version": "0.0.26",
   "description": "A JavaScript Arabic numbers to words tool.",
   "main": "nArabicWords.js",
   "unpkg": "nArabicWords.js",
