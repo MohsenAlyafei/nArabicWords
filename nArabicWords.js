@@ -1,9 +1,9 @@
 /*********************************************************************
 * @function      : nArabicWords(Number, [{options}])
 * @purpose       : Converts Numbers to Arabic Words with Grammar Rules
-* @version       : 1.60
+* @version       : 1.61
 * @author        : Mohsen Alyafei
-* @date          : 04 August 2020
+* @date          : 15 January 2021
 * @Licence       : MIT
 * @param         : {Number} [Integer in Numeric or String form]
 *                  Number may be in Arabic-Indic format (as a string)
@@ -37,7 +37,7 @@ const TableScales =["","ألف","مليون","مليار","ترليون","كوا
       TableMale   =["","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة"],
       TableFemale =["","واحدة","اثنتان","ثلاث","أربع","خمس","ست","سبع","ثمان","تسع","عشر"];
 
-export function nArabicWords(NumIn=0,{Feminine,Comma,SplitHund,Miah,Billions,TextToFollow,AG,Subject,Legal}={}) {
+function nArabicWords(NumIn=0,{Feminine,Comma,SplitHund,Miah,Billions,TextToFollow,AG,Subject,Legal}={}) {
 if (NumIn == 0) return "صفر";                          // if 0 or "0" then "zero"
 let Triplet, Scale, ScalePos, ScalePlural, TableUnits, Table11_19,NumberInWords= "",IsLastEffTriplet= false,Num_99;
 const ON= "on",                         // Flag to test if Option is ON
