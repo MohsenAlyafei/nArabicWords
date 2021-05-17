@@ -310,7 +310,7 @@ Another example: The sentence "20,000 Dollars" should be written as "**عشرو�
 This Option, therefore, permits the converted output text to be made suitable for a text to follow it.
 
 
-Examples with both the default and with the option **{TextAfter: "on"}**:
+Examples with both the default and with the option **{TextToFollow: "on"}**:
 
 ```javascript
 
