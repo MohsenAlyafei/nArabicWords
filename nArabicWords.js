@@ -21,7 +21,7 @@
 * {AG}           : "on": Text is produced in Accusative/Genitive (جر/نصب) case.
 *                  The default is the Nominative cse (رفع).
 *
-* {Subjec}       : An optional array holding the Subject Name to be counted in 4 forms as follows:
+* {Subject}      : An optional array holding the Subject Name to be counted in 4 forms as follows:
 *                  [0] = Deafult Name Singular      (e.g. "كتاب/تفاحة/دينار").
 *                  [1] = Name for 2's (double)      (e.g. "كتابان/تفاحتان/ديناران").
 *                  [2] = Name for plural            (e.g. "كتب/تفاحات/دنانير").
